@@ -81,6 +81,8 @@ navlinks.forEach(navlink => {
         $('.hamburger').classList.remove('expanded');
         $('.nav-bar__menu').classList.remove('toggle--on');
         $('.nav-bar__menu--overlay').classList.remove('on');
+        $('body').style.overflowY = "auto";
+
 
         // changing the title of the webpage
         $('title').textContent = `Spacinfo | ${e.target.getAttribute('data-title')}`;
