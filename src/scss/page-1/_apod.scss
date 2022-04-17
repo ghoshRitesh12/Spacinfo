@@ -1,0 +1,335 @@
+@use  '../components/variables' as *;
+@use '../components/mixins' as *;
+
+
+
+.apod-page--wrapper {
+    // display: none;
+    background: #252525;
+
+    // transition: .2s ease height;
+}
+
+.apod-sapod__wrap {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+    background-image: linear-gradient(to right bottom, #1c1c1c 40%, #252525 40%);
+    background-attachment: fixed;
+}
+
+
+.apod__container {
+    min-height: 90vh;
+}
+
+
+.apod-section--wrap {
+    position: relative;
+    z-index: 100;
+}
+
+.apod {
+    position: relative;
+    padding: 1.5rem 1.3rem;
+    margin-inline: auto;
+    color: #fff;
+    // background-color: $primary-clr;
+
+    @include breakpoint(medium) {
+        padding: 2rem;
+    }
+
+    @include breakpoint(large) {
+        max-width: $content-width;
+        width: 100%;
+
+        padding: 2rem 1.5rem;
+    }
+
+    // for title upfront
+    &__topic {
+        padding: 0 0 1.2rem 0;
+
+        @include breakpoint(large) {
+            padding: 0 0 3rem 0;
+        }
+
+        &--title {
+            font-size: clamp(1.4rem, 3.3vmin, 2.8rem);
+            min-height: clamp(1.4rem, 3.5vmin, 3rem);
+            letter-spacing: 1px;
+            word-spacing: 1px;
+            font-weight: 700;
+            line-height: 1.5;
+            // color: #fff;
+            border-radius: $borders;
+
+            @include breakpoint(large) {
+                width: fit-content;
+            }
+        }
+    }
+
+        &__date {
+            $date-clr: #dadada;
+            position: relative;
+            margin: .7rem 0 0 0;
+            text-indent: clamp(.5rem, 2vmin, .7rem);
+
+            // font-style: italic;
+            font-size: clamp(.9rem, 2.5vmin, 1.15rem);
+            color: $date-clr;
+            // background: #444;
+
+            // width: max(6.9rem,7rem);
+            width: fit-content;
+            
+
+            @include breakpoint(large) {
+                margin-left: .7rem;
+                padding: 0 0 .25rem 0;
+
+                // min-width: 6.9rem;
+                // max-width: 10rem;
+                width: fit-content;
+
+                text-indent: 0;
+                word-spacing: 1px;
+                letter-spacing: 1px;
+                border-bottom: 2.5px dotted rgb(200, 170, 255);
+                // border-bottom: 2.5px dashed rgb(200, 170, 255);
+            }
+        }
+
+    // image and explanation wrap
+    &__image--info-wrap {
+
+        @include breakpoint(large) {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            // align-items: baseline;
+
+            gap: 3rem;
+
+            width: 100%;
+        }
+    }    
+
+
+    // for image
+    &__image {
+        $round-edges: .6rem;
+        position: relative;
+        z-index: 50;
+        margin: 0 0 1rem 0;
+
+        overflow-x: hidden;
+
+        @include breakpoint(large) {
+            padding-top: 10%;
+            flex: 1;
+            min-width: 30rem;
+            max-width: 40rem;
+            width: 100%;
+        }
+
+        // image wrapper
+        &--wrap {
+            display: grid;
+            place-items: center;
+
+            position: relative;
+            color: #fff;
+            border-radius: $round-edges;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -.3rem; 
+                z-index: -1;
+                width: 94%;
+                height: 20%;
+                background-color: hsl(214, 100%, 99%);
+                border-radius: $round-edges;
+
+                @include breakpoint(medium) {
+                    bottom: -.4rem;
+                    width: 96%;
+                }
+
+                @include breakpoint(large) {
+                    bottom: -.45rem; 
+
+                }
+            }
+
+            &::before {
+                position: absolute;
+                bottom: -.85rem; 
+                z-index: -1;
+                width: 90%;
+                height: 20%;
+                background-color: hsl(213, 7%, 76%);
+                border-radius: $round-edges;
+
+                @include breakpoint(large) {
+                    content: '';
+                }
+            }
+
+        }
+
+        &--src {
+            position: relative;
+            border-radius: $round-edges;
+            user-select: none;
+
+            
+        }
+
+        &--hdurlsrc {
+            display: none;
+            place-items: center;
+
+            position: absolute;
+            right: -100%;
+
+            width: 100%;
+            height: 100%;
+            // background-color: hsla(0, 100%, 70%, 0.5);
+            background-color: hsla(0, 0%, 0%, 0.55);
+            border-radius: $round-edges;
+
+            color: #fff;
+            font-size: 1.5rem;
+            transition: .4s ease right;
+
+            @include breakpoint(large) {
+                display: grid;
+            }
+
+            // on hover js mouse event state
+            &.hover {
+                right: 0;
+            }
+
+            // on hover css state
+            &:hover {
+                right: 0;
+            }
+            
+        }
+
+
+        &--copyright {           
+            display: grid; 
+            place-items: center;
+
+            position: relative;
+
+            margin-left: auto;
+            margin-top: 1rem;
+            margin-right: 1rem;
+            width: fit-content;
+
+            font-size: clamp(.8rem, 2.5vmin, 1rem);
+            color: #eee;
+            // background: #444;
+
+            @include breakpoint(medium) {
+                margin-top: 1rem;
+            }
+
+            @include breakpoint(large) {
+                margin: 2.5rem 1.5rem 0 auto;
+            }
+        }
+    }
+
+
+    // information about apod
+    &__info {
+        padding-inline: .45rem;
+        text-align: left;
+
+
+        @include breakpoint(medium) {
+            padding-inline: .9rem;
+        }
+
+        @include breakpoint(large) {
+            padding-left: .2rem;
+        }
+
+        &--title {
+            font-family: $ubuntu;
+            font-size: clamp(1.5rem, 4.5vmin, 3rem);
+            font-weight: 400;
+            padding: 0 0 1rem 0;
+            letter-spacing: 1px;
+            line-height: 1.5;
+
+            // overflow-y: hidden;
+
+
+            @include breakpoint(medium) {
+                padding-bottom: 1.4rem;
+            }
+
+            @include breakpoint(large) {
+                line-height: 1.4;
+                word-spacing: 4px;
+            }
+        }
+
+        &--explanation {
+            flex-shrink: .5;
+            margin-top: .5rem;
+            font-size: clamp(1.1rem, 2.9vmin, 1.25rem);
+            line-height: 1.7;
+            letter-spacing: .5px;
+
+            // overflow-y: hidden;
+
+
+            @include breakpoint(medium) {
+                line-height: 1.9;
+                word-spacing: 1px;
+            }
+
+            @include breakpoint(large) {
+                margin-top: 1rem;
+                padding-left: .25rem;
+                line-height: 2;
+                letter-spacing: 1.5px;
+
+                min-width: 38ch;
+                max-width: 52ch;
+                width: 100%;
+            }
+        }
+
+        &--hdurl-wrap {
+            font-size: 1rem;
+            margin-top: 2rem;
+            font-style: italic;
+
+            @include breakpoint(medium) {
+                letter-spacing: 1px;
+            }
+
+            @include breakpoint(large) {
+                display: none;
+            }
+        }
+
+        &--hdurl {
+            color: $accent-clr;
+        }
+    }
+}
+
+

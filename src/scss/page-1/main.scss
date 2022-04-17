@@ -1,0 +1,355 @@
+@use '../components' as *;
+
+
+::selection {
+    color: #fff;
+    background-color: hsl(265, 90%, 70%);
+}
+
+html {
+    height: 100%;
+
+    // scrollbar-width: thin;
+    scrollbar-color: hsla(0, 0%, 85%, 0.8) #252525;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: hsla(0, 0%, 85%, 0.8);
+    border-radius: 1rem;
+    border: .3rem solid #252525;
+
+    &:hover {
+        background-color: hsla(0, 0%, 85%, 0.6);
+    }
+}
+
+
+html::-webkit-scrollbar-track {
+    background-color: #252525;
+}
+
+
+body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
+    position: relative;
+    
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: sans-serif;
+
+    // scrollbar-width: thin;
+
+    // &::-webkit-scrollbar {
+    //     display: none;
+    // }
+}
+
+.head {
+    @include flex(center, center) {
+        flex-direction: row;
+    }
+    position: relative;
+    z-index: 200;
+    // overflow: hidden;
+    padding-inline: 1rem;
+    width: 100%;
+    margin-inline: auto;
+    background-color: $primary-clr;
+
+    @include breakpoint(medium) {
+        padding-inline: 1.5rem;
+    }
+
+    @include breakpoint(large) {
+        padding: .5rem 0 0 0;
+    }
+
+    // change this
+    // border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    
+}
+
+.nav-bar {
+    @include flex(space-between, center) {
+        flex-direction: row;
+    }
+    // position: relative;
+    max-width: $content-width;
+    width: 100%;
+    margin-inline: auto;
+    padding-block: 1rem;
+    background-color: $primary-clr;
+
+    @include breakpoint(large) {
+        padding: .7rem 1rem;
+    }
+
+    // for logo
+    &__logo {
+        display: grid;
+        place-items: center;
+
+        &--text {
+            // font-family: $openSans;
+            font-family: sans-serif;
+            // font-style: italic;
+            color: $accent-clr;
+            font-size: clamp(1.25rem, 3vmin, 1.4rem);
+            font-weight: 500;
+            letter-spacing: .5px;
+
+            user-select: none;
+        }
+        padding-block: .15rem 0;
+        
+        @include breakpoint(large) {
+            padding-block: .2rem;
+        }
+    }        
+
+    // nav-menu
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        position: absolute;
+        z-index: 50;
+        top: 100%; left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        
+        border-radius: 0 0 .3rem .3rem;
+        // border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+
+        text-align: center;
+        background-color: $primary-clr;
+        // background-color: #7857a3;
+
+        transition: .4s ease height;
+
+        @include breakpoint(large) {
+            gap: 3rem;
+            position: relative;
+            flex-direction: row;
+            width: fit-content;
+            height: fit-content;
+            border-radius: 0;
+            border: none;
+        }
+
+        &.toggle--on {
+            transition: 200ms ease height;
+            height: clamp(12.5rem, 46vmin + 1rem, 18rem);
+        }
+
+    }
+
+    &__items {
+        padding: 0 .2rem;
+    }
+
+    &__items:first-child {
+        margin-top: .8rem;
+
+        @include breakpoint(medium) {
+            margin-top: 1.25rem;
+        }
+
+        @include breakpoint(large) {
+            margin-top: 0;
+        }
+    }
+
+    &__links {
+        display: block;
+        position: relative;
+        padding-block: clamp(.7rem, 3vmin, 1.5rem);
+        padding-inline: 0;
+        width: 100%;
+        
+        font-size: clamp(1rem, 3vmin, 1.032rem);
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 1px;
+        border-radius: .5rem;
+        color: #fff;
+        transition: .2s ease background-color;
+
+        &:hover,&:focus,
+        &:active, &:visited {
+            background-color: #3f3b44;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -5%; left: 0;
+            width: 100%;
+            transform: scale(0);
+            height: 3px;
+            background-color: $accent-clr;
+            border-radius: 2rem;
+            transition: .25s ease transform;
+        }
+
+        @include breakpoint(medium) {
+            margin-bottom: .5rem;
+        }
+
+        @include breakpoint(large) {
+            padding: .2rem 0 .3rem 0;
+
+            &:hover,&:focus,
+            &:active, &:visited {
+                background-color: $primary-clr;
+                border-radius: .5rem;
+            }
+
+            &.active::after,
+            &:hover::after {
+                transform: scale(1);
+            }
+        }
+
+    }
+    // end nav-menu
+
+    &__menu--overlay {
+        opacity: 0;
+        display: none;
+        position: absolute;
+        z-index: -1;
+        top: 100%; left: 0;
+    
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.45);
+        transition: .4s ease-in opacity,
+        .2s ease display;
+    }
+
+    &__menu--overlay.on {
+        opacity: 1;
+        display: block;
+    }
+}
+
+.hamburger {
+    display: grid;
+    place-items: center;
+    position: relative;
+    padding: .8rem;
+    cursor: pointer;
+    // outline: 1px solid #fff;
+    width: 1.5rem;
+    min-height: 1rem;
+
+    span {
+        pointer-events: none;
+    }
+
+    .bars {
+        position: absolute;
+        width: clamp(1.2rem, 4vmin, 1.3rem);
+        height: clamp(2px, 1vmin + .1rem, 2.4px);
+        background-color: #fff;
+        transition: .3s ease opacity,
+        .3s ease-out transform,
+        .2s ease margin;
+
+        border-radius: 2rem;
+    }
+
+    .top--bar {
+        margin-bottom: .8rem;
+    }
+
+    .bottom--bar {
+        margin-top: .8rem;
+    }
+
+    // for expanded form
+    &.expanded {
+        .top--bar {
+            margin-bottom: 0;
+            transform: rotate(45deg);
+        }
+
+        .middle--bar {
+            opacity: 0;
+        }
+        
+        .bottom--bar {
+            margin-top: 0;
+            transform: rotate(-45deg);
+            // opacity: 0;
+        }
+    }
+
+    @include breakpoint(large) {
+        display: none;
+    }
+}
+
+.footer {
+    display: block;
+
+    margin-top: auto;
+    width: 100%; 
+    // background-color: $primary-clr2;
+    background-color: $primary-clr;
+    color: #fff;
+
+    // border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    &__content {
+        @include flex(center,center);
+        padding: 1rem;
+        font-size: clamp(.85rem, 2.5vmin, .95rem);
+    }
+
+    &__link {
+        display: inline-block;
+        color: $accent-clr;
+        // padding-inline: .4rem;
+    }
+}
+
+.root {
+    // background: #222;
+
+    .apod-page--wrapper,
+    .mars-rover-page--wrapper,
+    .asteroids-page--wrapper {
+        display: none;
+    }
+}
+
+.page__apod {
+    .apod-page--wrapper {
+        display: block;
+    }
+}
+
+.page__mars-rover {
+    .mars-rover-page--wrapper {
+        display: block;
+    }
+}
+
+.page__asteroids {
+    .asteroids-page--wrapper {
+        display: block;
+    }
+}

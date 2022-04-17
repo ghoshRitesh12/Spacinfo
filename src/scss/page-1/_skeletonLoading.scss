@@ -1,0 +1,60 @@
+@use '../components/mixins' as *;
+
+.skeleton-image {
+    min-width: 100%;
+    min-height: 17rem;
+
+    @include breakpoint(medium) {
+        min-width: 100%;
+        min-height: 44rem;
+    }
+
+    @include breakpoint(large) {
+        max-width: 40rem;
+        width: 100%;
+        
+        min-height: 30rem;
+        // height: ;
+    }
+}
+
+.skeleton-apod__topic--title {
+    color: transparent;
+}
+
+.skeleton-explanation {
+    // max-width: 50rem;
+    width: 100%;
+    font-size: clamp(1.1rem, 2.9vmin, 1.25rem);
+    min-height: clamp(1.1rem, 2.9vmin, 1.25rem);
+    margin-bottom: 1.2rem;
+    border-radius: .4rem;
+    color: transparent;
+
+    &:last-child {
+        width: 70%;
+    }
+}
+
+.skeleton-apod__title {
+    width: 100%;
+    height: clamp(1.2rem, 3vmin, 1.65rem);
+    margin-bottom: 1.2rem;
+    border-radius: .4rem;
+
+    &:last-child {
+        width: 70%;
+    }
+}
+
+.skeleton-apod__date {
+    height: clamp(.9rem, 2.5vmin, 1.15rem);
+    color: transparent;
+    border: none;
+    border-radius: .4rem;
+}
+
+.skeleton-apod__copyright {
+    color: transparent;
+    border-radius: .25rem;
+}

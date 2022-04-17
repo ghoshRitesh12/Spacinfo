@@ -1,0 +1,292 @@
+@use  '../components/variables' as *;
+@use '../components/mixins' as *;
+// @use '../components/utility';
+
+
+.sapod-section--wrap {
+    position: relative;
+
+    background-attachment: fixed;
+    background-image: linear-gradient(to right bottom, #252525 60%, #1c1c1c 40%);
+    
+    @include breakpoint(large) {
+        background-image: linear-gradient(to right bottom, #252525 50%, #1c1c1c 50%);
+    }
+}
+
+.sapod {
+    position: relative;
+    padding: 1.5rem 1.3rem;
+    margin-inline: auto;
+    color: #fff;
+    // background: $primary-clr-gradient;
+
+    @include breakpoint(medium) {
+        padding: 2rem;
+    }
+
+    @include breakpoint(large) {
+        max-width: $content-width;
+        width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    // for upfront title
+    &__search {
+        padding: 0 0 1.2rem 0;
+
+        @include breakpoint(large) {
+            padding: 0 0 3rem 0;
+        }
+
+        &--title {
+            font-size: clamp(1.4rem, 3.3vmin, 2.8rem);
+            letter-spacing: 1px;
+            word-spacing: 1px;
+            font-weight: 700;
+            line-height: 1.5;
+
+            overflow: hidden;
+        }
+
+        &--date {
+            margin: 1.2rem 0 0 .5rem;
+            padding: .3rem .4rem;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.6);
+            border: none;
+            font-size: clamp(.9rem, 2.9vmin, 1.1rem);
+            outline: 1px solid $accent-clr;
+            border-radius: $borders;
+
+            @include breakpoint(medium) {
+                margin: 1.5rem 0 0 1rem;
+                padding: .5rem;
+            }
+
+            @include breakpoint(large) {
+                margin-left: 2rem;
+                padding: .6em;
+            }
+        }
+
+        &--note {
+            margin: .5rem 0 .5rem .6rem;
+            font-size: clamp(.7rem, 2vmin, .9rem);
+
+            @include breakpoint(medium) {
+                margin: .8rem 0 0 1rem;
+            }
+
+            @include breakpoint(large) {
+                margin: .8rem 0 0 2rem;
+            }
+        }
+    }
+
+    // image and explanation wrap for sapod
+    &__image--info-wrap {
+
+        @include breakpoint(large) {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            gap: 3rem;
+
+            width: 100%;
+        }
+    }
+
+
+    // for image
+    &__image {
+        $round-edges: .6rem;
+        position: relative;
+        z-index: 50;
+        margin: 0 0 1rem 0;
+
+        overflow-x: hidden;
+
+        @include breakpoint(large) {
+            flex: 1;
+
+            padding-top: 10%;
+            min-width: 30rem;
+            max-width: 40rem;
+            width: 100%;
+        }
+
+        &--wrap {
+            display: grid;
+            place-items: center;
+            
+            position: relative;
+            color: #fff;
+            text-decoration: underline;
+            border-radius: $round-edges;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -.3rem; z-index: -1;
+                width: 95%;
+                height: 20%;
+                background-color: hsl(214, 100%, 99%);
+                border-radius: $round-edges;
+
+                @include breakpoint(medium) {
+                    bottom: -.4rem;
+                    width: 96%;
+                }
+
+                @include breakpoint(large) {
+                    bottom: -.45rem;
+                }
+            }
+
+            &::before {
+                position: absolute;
+                bottom: -.9rem; z-index: -1;
+                width: 90%;
+                height: 20%;
+                background-color: hsl(213, 7%, 76%);
+                border-radius: $round-edges;
+
+                @include breakpoint(large) {
+                    content: '';
+                }
+            }
+        }
+
+        &--src {
+            position: relative;
+            border-radius: $round-edges;
+            user-select: none;
+        }
+
+        &--hdurlsrc {
+            display: none;
+            place-items: center;
+
+            position: absolute;
+            right: -100%;
+
+            width: 100%;
+            height: 100%;
+            // background-color: hsla(0, 100%, 70%, 0.5);
+            background-color: hsla(0, 0%, 0%, 0.55);
+            border-radius: $round-edges;
+
+            color: #fff;
+            font-size: 1.5rem;
+            transition: .4s ease right;
+
+            @include breakpoint(large) {
+                display: grid;
+            }
+
+            // on hover js mouse event state
+            &.hover {
+                right: 0;
+            }
+
+            // on hover css state
+            &:hover {
+                right: 0;
+            }
+            
+        }
+
+
+        &--copyright {
+            @include flex(end,center);
+
+            color: #eee;
+            position: relative;
+            margin: .7rem 1rem 0 0;
+            font-size: clamp(.8rem, 2.5vmin, 1rem);
+
+            @include breakpoint(medium) {
+                margin-top: 1rem;
+            }
+
+            @include breakpoint(large) {
+                margin: 2.5rem 1.5rem 0 0;
+            }
+        }
+    }
+
+
+    &__info {
+        padding-inline: .45rem;
+        text-align: left;
+
+        @include breakpoint(medium) {
+            padding-inline: .9rem;
+        }
+
+        @include breakpoint(large) {
+            padding-left: .2rem;
+        }
+
+        &--title {
+            font-family: $ubuntu;
+            font-size: clamp(1.5rem, 4.5vmin, 3rem);
+            font-weight: 400;
+            padding: 0 0 1rem 0;
+            letter-spacing: 1px;
+            line-height: 1.5;
+
+            @include breakpoint(medium) {
+                padding-bottom: 1.4rem;
+            }
+
+            @include breakpoint(large) {
+                line-height: 1.4;
+                word-spacing: 4px;
+            }
+        }
+
+        &--explanation {
+            flex-shrink: .5;
+            margin-top: .5rem;
+            font-size: clamp(1.1rem, 2.9vmin, 1.25rem);
+            line-height: 1.7;
+            letter-spacing: .5px;
+
+            @include breakpoint(medium) {
+                line-height: 1.9;
+                word-spacing: 1px;
+            }
+
+            @include breakpoint(large) {
+                margin-top: 1rem;
+                padding-left: .25rem;
+                line-height: 2;
+                letter-spacing: 1.5px;
+
+                min-width: 38ch;
+                max-width: 52ch;
+                width: 100%;
+            }
+        }
+
+        &--hdurl-wrap {
+            font-size: 1rem;
+            margin-top: 2rem;
+            font-style: italic;
+
+            @include breakpoint(medium) {
+                letter-spacing: 1px;
+            }
+
+            @include breakpoint(large) {
+                display: none;
+            }
+        }
+
+        &--hdurl {
+            color: $accent-clr;
+        }
+    }
+}
