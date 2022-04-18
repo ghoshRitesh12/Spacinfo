@@ -279,7 +279,7 @@
             font-size: clamp(1.1rem, 2.9vmin, 1.25rem);
             line-height: 2;
             letter-spacing: .5px;
-            word-spacing: 1px;
+            word-spacing: 2px;
 
             @include breakpoint(medium) {
                 word-spacing: 1px;
