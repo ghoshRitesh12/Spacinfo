@@ -146,38 +146,10 @@ export async function getApod() {
 
 // SAPOD ASYNC API FETCH
 
-function rewriteSapod(sapod) {
+function createSapod (respData) {
 
-    $('.sapod__search--date').value = '';
-
-    // for image src
-    sapod.querySelector('.sapod__image--src').src = '';
-
-    // for hd urls
-    sapod.querySelector('.sapod__image--hdurlsrc').href = '';
-    sapod.querySelector('.sapod__info--hdurl').href = '';
-
-    // for title,
-    sapodWrap.querySelector('.sapod__info--title').textContent = '';
-
-    // explanation,
-    sapodWrap.querySelector('.sapod__info--explanation').textContent = '';
-
-    // copyright
-    sapodWrap.querySelector('.sapod__image--copyright').textContent = '';
-
-    // 
-
-
-}
-
-
-function createSapod (respData, state) {
-
+    // cloning <sapod> template
     const sapodWrap = $('#sapod__template').content.cloneNode(true).children[0];
-
-    
-        // rewriteSapod(sapodWrap);
 
     // for date
     $('.sapod__search--date').value = respData.date;
@@ -206,11 +178,10 @@ function createSapod (respData, state) {
     `<div class="skeleton skeleton-apod__copyright"> ${copyrightData} </div>`;
 
 
+    // erasing the previous value
+    $('.sapod--info__container').innerHTML = '';
+    
     // appending cloned <template> to sapod info container
-
-    if(state === true)
-        $('.sapod--info__container').innerHTML = '';
-
     $('.sapod--info__container').append(sapodWrap);
 
     // for existing skeleton loading, once the image loads
@@ -225,7 +196,6 @@ function createSapod (respData, state) {
         copyright.innerHTML =  '';
         copyright.textContent = copyrightData;
     });
-
 }
 
 

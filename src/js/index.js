@@ -99,17 +99,11 @@ getApod();
 
 
 // GET SAPOD
-let requests = 0;
 $('.sapod__search--date').addEventListener('input', e => {
     const searchedDate = e.target.value;
 
-    if(requests>0)
-        getSapod(searchedDate, true);
-    else
-        getSapod(searchedDate, false);
-
-    requests++;
-})
+    getSapod(searchedDate);
+});
 
 
 

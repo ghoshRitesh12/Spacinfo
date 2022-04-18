@@ -289,21 +289,21 @@
             flex-shrink: .5;
             margin-top: .5rem;
             font-size: clamp(1.1rem, 2.9vmin, 1.25rem);
-            line-height: 1.7;
+            line-height: 2;
             letter-spacing: .5px;
 
             // overflow-y: hidden;
 
 
             @include breakpoint(medium) {
-                line-height: 1.9;
+                // line-height: 1.9;
                 word-spacing: 1px;
             }
 
             @include breakpoint(large) {
                 margin-top: 1rem;
                 padding-left: .25rem;
-                line-height: 2;
+                // line-height: 2;
                 letter-spacing: 1.5px;
 
                 min-width: 38ch;

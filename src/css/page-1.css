@@ -319,12 +319,11 @@
   flex-shrink: 0.5;
   margin-top: 0.5rem;
   font-size: clamp(1.1rem, 2.9vmin, 1.25rem);
-  line-height: 1.7;
+  line-height: 2;
   letter-spacing: 0.5px;
 }
 @media (min-width: 40em) {
   .apod__info--explanation {
-    line-height: 1.9;
     word-spacing: 1px;
   }
 }
@@ -332,7 +331,6 @@
   .apod__info--explanation {
     margin-top: 1rem;
     padding-left: 0.25rem;
-    line-height: 2;
     letter-spacing: 1.5px;
     min-width: 38ch;
     max-width: 52ch;
