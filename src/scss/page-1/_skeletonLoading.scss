@@ -14,7 +14,6 @@
         width: 100%;
         
         min-height: 30rem;
-        // height: ;
     }
 }
 
@@ -23,7 +22,6 @@
 }
 
 .skeleton-explanation {
-    // max-width: 50rem;
     width: 100%;
     font-size: clamp(1.1rem, 2.9vmin, 1.25rem);
     min-height: clamp(1.1rem, 2.9vmin, 1.25rem);
@@ -55,6 +53,11 @@
 }
 
 .skeleton-apod__copyright {
+    color: transparent;
+    border-radius: .25rem;
+}
+
+.skeleton-apod__hdurl {
     color: transparent;
     border-radius: .25rem;
 }

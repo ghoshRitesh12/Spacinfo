@@ -47,6 +47,10 @@
             line-height: 1.5;
 
             overflow: hidden;
+
+            @include breakpoint(large) {
+                width: fit-content;
+            }
         }
 
         &--date {
@@ -122,14 +126,14 @@
             
             position: relative;
             color: #fff;
-            text-decoration: underline;
             border-radius: $round-edges;
 
             &::after {
                 content: '';
                 position: absolute;
-                bottom: -.3rem; z-index: -1;
-                width: 95%;
+                bottom: -.3rem; 
+                z-index: -1;
+                width: 94%;
                 height: 20%;
                 background-color: hsl(214, 100%, 99%);
                 border-radius: $round-edges;
@@ -146,7 +150,8 @@
 
             &::before {
                 position: absolute;
-                bottom: -.9rem; z-index: -1;
+                bottom: -.9rem; 
+                z-index: -1;
                 width: 90%;
                 height: 20%;
                 background-color: hsl(213, 7%, 76%);
@@ -173,7 +178,6 @@
 
             width: 100%;
             height: 100%;
-            // background-color: hsla(0, 100%, 70%, 0.5);
             background-color: hsla(0, 0%, 0%, 0.55);
             border-radius: $round-edges;
 
@@ -199,19 +203,25 @@
 
 
         &--copyright {
-            @include flex(end,center);
+            display: grid; 
+            place-items: center;
 
-            color: #eee;
             position: relative;
-            margin: .7rem 1rem 0 0;
+
+            margin-left: auto;
+            margin-top: 1rem;
+            margin-right: 1rem;
+            width: fit-content;
+
             font-size: clamp(.8rem, 2.5vmin, 1rem);
+            color: #eee;
 
             @include breakpoint(medium) {
                 margin-top: 1rem;
             }
 
             @include breakpoint(large) {
-                margin: 2.5rem 1.5rem 0 0;
+                margin: 2.5rem 1.5rem 0 auto;
             }
         }
     }
@@ -251,18 +261,17 @@
             flex-shrink: .5;
             margin-top: .5rem;
             font-size: clamp(1.1rem, 2.9vmin, 1.25rem);
-            line-height: 1.7;
+            line-height: 2;
             letter-spacing: .5px;
+            word-spacing: 1px;
 
             @include breakpoint(medium) {
-                line-height: 1.9;
                 word-spacing: 1px;
             }
 
             @include breakpoint(large) {
                 margin-top: 1rem;
                 padding-left: .25rem;
-                line-height: 2;
                 letter-spacing: 1.5px;
 
                 min-width: 38ch;
@@ -290,3 +299,4 @@
         }
     }
 }
+

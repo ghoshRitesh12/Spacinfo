@@ -68,7 +68,7 @@ async function createApod (apiData) {
         // date, img src & hdurl
         const dateInfo = modifyDate(apiData.date);
         const date = apodWrap.querySelector('.apod__date');
-        date.innerHTML = `${skeletonDate}`;
+        date.innerHTML = skeletonDate;
 
         // for setting sapod date
         $('.sapod__search--date').value =  apiData.date;
@@ -78,6 +78,8 @@ async function createApod (apiData) {
         imgSrc.src = apiData.url;
 
         apodWrap.querySelector('.apod__image--hdurlsrc').href = apiData.hdurl;
+
+        // for information section hdurl
         apodWrap.querySelector('.apod__info--hdurl').href = apiData.hdurl;
 
         // copyright
@@ -89,12 +91,12 @@ async function createApod (apiData) {
         // for title
         const titleData = apiData.title
         const title = apodWrap.querySelector('.apod__info--title');
-        title.innerHTML = `${skeletonTitle}`;
+        title.innerHTML = skeletonTitle;
 
         // for explanation
         const explanationData = apiData.explanation;
         const explanation = apodWrap.querySelector('.apod__info--explanation');
-        explanation.innerHTML = `${skeletonExplanation}`;
+        explanation.innerHTML = skeletonExplanation;
 
 
         // appending cloned <template> to page container
@@ -110,12 +112,16 @@ async function createApod (apiData) {
             title.textContent = titleData;
             
             apodTopicTitle.classList.remove('skeleton', 'skeleton-apod__topic--title');
+
+            $('.apod__container').classList.remove('hstretch');
             
             date.innerHTML = '';
             date.textContent = dateInfo;
 
             copyright.innerHTML =  '';
             copyright.textContent = copyrightData;
+
+            $('.apod__info--hdurl-wrap').classList.remove('skeleton', 'skeleton-apod__hdurl');
 
         });
     }
@@ -133,7 +139,9 @@ export async function getApod() {
         const apodData = await response.json();
         createApod(apodData);
 
-    } catch (err) {
+    } 
+    
+    catch (err) {
         console.error(err);
     }
 }
@@ -195,6 +203,9 @@ function createSapod (respData) {
         
         copyright.innerHTML =  '';
         copyright.textContent = copyrightData;
+
+        $('.sapod__info--hdurl-wrap').classList.remove('skeleton', 'skeleton-apod__hdurl');
+
     });
 }
 

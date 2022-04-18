@@ -54,6 +54,11 @@
   border-radius: 0.25rem;
 }
 
+.skeleton-apod__hdurl {
+  color: transparent;
+  border-radius: 0.25rem;
+}
+
 /* open-sans-regular - latin */
 @font-face {
   font-family: "Open Sans";
@@ -87,8 +92,8 @@
   background-attachment: fixed;
 }
 
-.apod__container {
-  min-height: 90vh;
+.hstretch {
+  min-height: 120vh;
 }
 
 .apod-section--wrap {
@@ -178,8 +183,8 @@
 }
 @media (min-width: 64em) {
   .apod__image {
-    padding-top: 10%;
     flex: 1;
+    padding-top: 10%;
     min-width: 30rem;
     max-width: 40rem;
     width: 100%;
@@ -321,6 +326,7 @@
   font-size: clamp(1.1rem, 2.9vmin, 1.25rem);
   line-height: 2;
   letter-spacing: 0.5px;
+  word-spacing: 1px;
 }
 @media (min-width: 40em) {
   .apod__info--explanation {
@@ -401,6 +407,13 @@
   line-height: 1.5;
   overflow: hidden;
 }
+@media (min-width: 64em) {
+  .sapod__search--title {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
 .sapod__search--date {
   margin: 1.2rem 0 0 0.5rem;
   padding: 0.3rem 0.4rem;
@@ -466,7 +479,6 @@
   place-items: center;
   position: relative;
   color: #fff;
-  text-decoration: underline;
   border-radius: 0.6rem;
 }
 .sapod__image--wrap::after {
@@ -474,7 +486,7 @@
   position: absolute;
   bottom: -0.3rem;
   z-index: -1;
-  width: 95%;
+  width: 94%;
   height: 20%;
   background-color: hsl(214deg, 100%, 99%);
   border-radius: 0.6rem;
@@ -537,13 +549,17 @@
   right: 0;
 }
 .sapod__image--copyright {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  color: #eee;
+  display: grid;
+  place-items: center;
   position: relative;
-  margin: 0.7rem 1rem 0 0;
+  margin-left: auto;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   font-size: clamp(0.8rem, 2.5vmin, 1rem);
+  color: #eee;
 }
 @media (min-width: 40em) {
   .sapod__image--copyright {
@@ -552,7 +568,7 @@
 }
 @media (min-width: 64em) {
   .sapod__image--copyright {
-    margin: 2.5rem 1.5rem 0 0;
+    margin: 2.5rem 1.5rem 0 auto;
   }
 }
 .sapod__info {
@@ -592,12 +608,12 @@
   flex-shrink: 0.5;
   margin-top: 0.5rem;
   font-size: clamp(1.1rem, 2.9vmin, 1.25rem);
-  line-height: 1.7;
+  line-height: 2;
   letter-spacing: 0.5px;
+  word-spacing: 1px;
 }
 @media (min-width: 40em) {
   .sapod__info--explanation {
-    line-height: 1.9;
     word-spacing: 1px;
   }
 }
@@ -605,7 +621,6 @@
   .sapod__info--explanation {
     margin-top: 1rem;
     padding-left: 0.25rem;
-    line-height: 2;
     letter-spacing: 1.5px;
     min-width: 38ch;
     max-width: 52ch;
