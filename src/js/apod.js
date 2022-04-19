@@ -8,6 +8,15 @@ const APOD_URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
 // const date = "2003-05-14"
 // const APOD_URL = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${API_KEY}`;
 
+const addZero = (time) => time<10 ? `0${time}` : time;
+
+function todaysDate() {
+    const d = new Date();
+    const date = 
+    `${d.getFullYear()}-${addZero(d.getMonth()+1)}-${addZero(d.getDate())}`;
+    return date;
+}
+
 
 function modifyDate(inputDate) {
     const month = [
@@ -138,19 +147,27 @@ export async function getApod() {
     try {
         // const response = await fetch(APOD_URL);
         // const apodData = await response.json();
+        let apiData = '';
 
         const cache = await caches.open(CACHE_NAME);
+        const newDate = todaysDate();
+
         let cacheResp = await cache.match(APOD_URL);
         if(cacheResp) {
-            const data = await cacheResp.json();
-            createApod(data);
-            // console.log("y",data);
+            apiData = await cacheResp.json();
+
+            if(newDate !== apiData.date) {
+                await cache.add(APOD_URL);
+                cacheResp = await cache.match(APOD_URL);
+                apiData = await cacheResp.json();
+            }
+            createApod(apiData);
+            
         } else {
             await cache.add(APOD_URL);
             cacheResp = await cache.match(APOD_URL);
-            const data = await cacheResp.json();
-            createApod(data);
-            // console.log("n",data);
+            apiData = await cacheResp.json();
+            createApod(apiData);
         }
 
         // createApod(apodData);

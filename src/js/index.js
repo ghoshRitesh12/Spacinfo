@@ -102,10 +102,8 @@ window.addEventListener('load', getApod);
 // GET SAPOD
 $('.sapod__search--date').addEventListener('input', e => {
     const searchedDate = e.target.value;
-
     getSapod(searchedDate);
 });
-
 
 
 /*---- End Spa Routing Setup ----*/
