@@ -94,8 +94,9 @@ navlinks.forEach(navlink => {
 });
 
 
+// calling getApod() function on page load
+window.addEventListener('load', getApod);
 
-getApod();
 
 
 // GET SAPOD
