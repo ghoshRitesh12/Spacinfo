@@ -131,20 +131,37 @@ async function createApod (apiData) {
     }
 }
 
+const CACHE_NAME = "Apod";
 
 
 export async function getApod() {
     try {
-        const response = await fetch(APOD_URL);
-        const apodData = await response.json();
-        createApod(apodData);
+        // const response = await fetch(APOD_URL);
+        // const apodData = await response.json();
 
+        const cache = await caches.open(CACHE_NAME);
+        let cacheResp = await cache.match(APOD_URL);
+        if(cacheResp) {
+            const data = await cacheResp.json();
+            createApod(data);
+            // console.log("y",data);
+        } else {
+            await cache.add(APOD_URL);
+            cacheResp = await cache.match(APOD_URL);
+            const data = await cacheResp.json();
+            createApod(data);
+            // console.log("n",data);
+        }
+
+        // createApod(apodData);
     } 
     
     catch (err) {
         console.error(err);
     }
 }
+
+
 
 /*---- Event Listeners ----*/
 
@@ -210,13 +227,13 @@ function createSapod (respData) {
 }
 
 
-export const getSapod = async (keyDate, bool) => {
+export const getSapod = async (keyDate) => {
     try {
         const SAPOD_URL = `https://api.nasa.gov/planetary/apod?date=${keyDate}&api_key=${API_KEY}`;
 
         const response = await fetch(SAPOD_URL);
         const sapodData = await response.json();
-        createSapod(sapodData, bool);
+        createSapod(sapodData);
         
     } catch (err) {
         console.error(err);
