@@ -9,8 +9,6 @@ export const $ = a => document.querySelector(a);
 export const $$ = abc  => document.querySelectorAll(abc);
 /*---- End selectors ----*/
 
-// router file
-// route();
 
 /*---- Functions ----*/
 function addGlobalEventListener(type, selector, callback) {
@@ -19,10 +17,12 @@ function addGlobalEventListener(type, selector, callback) {
             callback(e);
     });
 }
-
 /*---- End functions ----*/
 
+
 /*---- Event Listeners ----*/
+
+// for hamburger menu
 $('.hamburger').addEventListener('click', e => {
     $('.nav-bar__menu').classList.toggle('toggle--on');
     e.target.classList.toggle('expanded');
@@ -33,6 +33,7 @@ $('.hamburger').addEventListener('click', e => {
     $('.nav-bar__menu--overlay').classList.toggle('on');
 });
 
+// for drop-down menu backdrop
 addGlobalEventListener('click', '.nav-bar__menu--overlay',
 e => {
     e.target.classList.remove('on');
@@ -66,8 +67,6 @@ e => {
     $('.sapod__image--hdurlsrc').classList.remove('hover');
 });
 
-// $('title').textContent = "Spacinfo | Mars=Rover";
-
 
 // getting all navigation links
 const navlinks = $$('.nav-bar__links');
@@ -97,16 +96,28 @@ navlinks.forEach(navlink => {
 // calling getApod() function on page load
 window.addEventListener('load', getApod);
 
+// debouncing sapod request
+function debounce (callback, delay = 1000) {
+    let timeout;
 
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            callback(...args);
+        }, delay)
+    }
+}
+
+const updateDebounceDate = debounce(date => {
+    getSapod(date);
+}, 1000)
 
 // GET SAPOD
 $('.sapod__search--date').addEventListener('input', e => {
     const searchedDate = e.target.value;
-    getSapod(searchedDate);
+    updateDebounceDate(searchedDate)
+    // getSapod(searchedDate);
 });
-
-
-/*---- End Spa Routing Setup ----*/
 
 
 

@@ -1,12 +1,8 @@
 const $ = a => document.querySelector(a);
-const $$ = abc  => document.querySelectorAll(abc);
+// const $$ = abc  => document.querySelectorAll(abc);
 
 export const API_KEY = 'vYQfJQy4vInZSIgNWhuQvlKeE3phIWj6pbLJyJ4J';
 const APOD_URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
-
-// for customized date
-// const date = "2003-05-14"
-// const APOD_URL = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${API_KEY}`;
 
 const addZero = (time) => time<10 ? `0${time}` : time;
 
@@ -140,9 +136,8 @@ async function createApod (apiData) {
     }
 }
 
+
 const CACHE_NAME = "Apod";
-
-
 export async function getApod() {
     try {
         // const response = await fetch(APOD_URL);
@@ -161,29 +156,20 @@ export async function getApod() {
                 cacheResp = await cache.match(APOD_URL);
                 apiData = await cacheResp.json();
             }
-            createApod(apiData);
-            
-        } else {
+        } 
+        else {
             await cache.add(APOD_URL);
             cacheResp = await cache.match(APOD_URL);
             apiData = await cacheResp.json();
-            createApod(apiData);
         }
 
-        // createApod(apodData);
+        createApod(apiData);
     } 
     
     catch (err) {
         console.error(err);
     }
 }
-
-
-
-/*---- Event Listeners ----*/
-
-
-
 
 
 // SAPOD ASYNC API FETCH
