@@ -5,6 +5,7 @@
 
 .sapod-section--wrap {
     position: relative;
+    z-index: 100;
 
     background-attachment: fixed;
     background-image: linear-gradient(to right bottom, #252525 60%, #1c1c1c 40%);
@@ -123,44 +124,10 @@
         &--wrap {
             display: grid;
             place-items: center;
-            
             position: relative;
+
             color: #fff;
             border-radius: $round-edges;
-
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -.3rem; 
-                z-index: -1;
-                width: 94%;
-                height: 20%;
-                background-color: hsl(214, 100%, 99%);
-                border-radius: $round-edges;
-
-                @include breakpoint(medium) {
-                    bottom: -.4rem;
-                    width: 96%;
-                }
-
-                @include breakpoint(large) {
-                    bottom: -.45rem;
-                }
-            }
-
-            &::before {
-                position: absolute;
-                bottom: -.9rem; 
-                z-index: -1;
-                width: 90%;
-                height: 20%;
-                background-color: hsl(213, 7%, 76%);
-                border-radius: $round-edges;
-
-                @include breakpoint(large) {
-                    content: '';
-                }
-            }
         }
 
         &--src {
@@ -199,6 +166,42 @@
                 right: 0;
             }
             
+        }
+
+        // for under-styling bottom of the image
+        &--understyle1 {
+            position: absolute;
+            bottom: -.3rem; 
+            z-index: -1;
+            height: 20%;
+            width: 94%;
+
+            background-color: hsl(214, 100%, 99%);
+            border-radius: $round-edges;  
+            
+            @include breakpoint(medium) {
+                bottom: -.4rem;
+                width: 96%;
+            }
+
+            @include breakpoint(large) {
+                bottom: -.45rem; 
+            }
+        }
+
+        &--understyle2 {
+            display: none;
+            position: absolute;
+            bottom: -.85rem; 
+            z-index: -2;
+            width: 90%;
+            height: 20%;
+            background-color: hsl(213, 7%, 76%);
+            border-radius: $round-edges;
+
+            @include breakpoint(large) {
+                display: block;
+            }
         }
 
 
