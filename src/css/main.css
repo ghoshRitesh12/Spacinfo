@@ -112,6 +112,7 @@ textarea, select {
 
 html {
   height: 100%;
+  scrollbar-width: thin;
   scrollbar-color: hsla(0deg, 0%, 85%, 0.8) #252525;
 }
 
