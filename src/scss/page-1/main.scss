@@ -255,6 +255,8 @@ body {
     width: 1.5rem;
     min-height: 1rem;
 
+    -webkit-tap-highlight-color: transparent;
+
     span {
         pointer-events: none;
     }

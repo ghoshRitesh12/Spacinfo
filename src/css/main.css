@@ -326,6 +326,7 @@ body {
   cursor: pointer;
   width: 1.5rem;
   min-height: 1rem;
+  -webkit-tap-highlight-color: transparent;
 }
 .hamburger span {
   pointer-events: none;
