@@ -281,6 +281,9 @@
             letter-spacing: .5px;
             word-spacing: 2px;
 
+            overflow-x: hidden;
+            word-wrap: break-word;
+
             @include breakpoint(medium) {
                 word-spacing: 1px;
             }

@@ -327,6 +327,8 @@
   line-height: 2;
   letter-spacing: 0.5px;
   word-spacing: 2px;
+  overflow-x: hidden;
+  word-wrap: break-word;
 }
 @media (min-width: 40em) {
   .apod__info--explanation {
@@ -612,6 +614,8 @@
   line-height: 2;
   letter-spacing: 0.5px;
   word-spacing: 2px;
+  overflow-x: hidden;
+  word-wrap: break-word;
 }
 @media (min-width: 40em) {
   .sapod__info--explanation {
