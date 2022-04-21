@@ -333,16 +333,16 @@ body {
 .hamburger .bars {
   position: absolute;
   width: clamp(1.2rem, 4vmin, 1.3rem);
-  height: clamp(2px, 1vmin + 0.1rem, 2.4px);
+  height: clamp(1px, 1vmin + 0.1rem, 2.4px);
   background-color: #fff;
   transition: 0.3s ease opacity, 0.3s ease-out transform, 0.2s ease margin;
   border-radius: 2rem;
 }
 .hamburger .top--bar {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.85rem;
 }
 .hamburger .bottom--bar {
-  margin-top: 0.8rem;
+  margin-top: 0.85rem;
 }
 .hamburger.expanded .top--bar {
   margin-bottom: 0;
