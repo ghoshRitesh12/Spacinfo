@@ -1,12 +1,16 @@
 @use '../components' as *;
 
 .mars-rover-page--wrapper {
-    // background-color: #1c1c1c;
+    
 
     min-height: 100vh;
+    background-color: #1f1f1f;
+    
 }
 
 .mars-rover {
+    $accent-clr: hsl(199, 100%, 45%);
+
     position: relative;
     padding: 1.5rem 1.3rem;
     margin-inline: auto;
@@ -37,7 +41,7 @@
             line-height: 1.5;
             border-radius: $borders;
 
-            
+            color: #fff;
 
             @include breakpoint(large) {
                 width: fit-content;
@@ -45,15 +49,30 @@
         }
 
         &--nav {
-            // color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            // outline: 1px solid red;
+            padding: 1.2rem 1rem 0 1rem;
+            min-width: 100%;
         
-            button {
-                background-color: $accent-clr;
+            .btn {
+                // background-color: $accent-clr;
+                background-color: hsl(199, 100%, 45%);
                 border: none;
-                padding: .25em .35em;
+                font-size: 1.4rem;
+                padding: .3rem 1rem;
                 color: #fff;
                 border-radius: $borders;
 
+                cursor: pointer;
+                transition: .2s ease background-color;
+
+                &:hover,
+                &:focus {
+                    background-color:hsl(199, 100%, 38%);
+                }
             }
         }
     }
@@ -85,8 +104,9 @@
         min-height: 14rem;        
         
         font-family: $openSans;
-        box-shadow: 0 .3rem .5rem 0 rgba(0, 0, 0, 0.2);
-        color: #383838;
+        box-shadow: 0 .3rem .5rem 0 rgba(255, 255, 255, 0.2);
+        // color: #383838;
+        color: #fff;
         border-radius: .3rem;
         overflow: hidden;
 
@@ -99,7 +119,7 @@
             overflow: hidden;
 
             &--img-src {
-                // display: block;
+                display: block;
                 text-align: center;
 
                 min-width: 100%;
@@ -128,13 +148,13 @@
             word-spacing: 1px;
             letter-spacing: .4px;
             font-weight: 500;
-
+            border-top: 1px solid rgba(255, 255, 255, 0.35);
 
             &-date {
                 line-height: 1.6;
 
                 .photo-id {
-                    color: hsl(199, 100%, 30%);
+                    color: hsl(199, 100%, 65%);
                 }
             }
 
@@ -146,7 +166,7 @@
 
 
         .rover-status {
-            color: green;
+            color: hsl(115, 98%, 34%);
         }
 
         .full-image {
@@ -158,8 +178,10 @@
             font-size: clamp(.85rem, 3vmin, .92rem);
             font-size: 500;
             border-radius: $borders;
-            outline: 1px solid hsl(0, 100%, 70%);
-            color: hsl(0, 100%, 70%);
+            outline: 2px solid $accent-clr;
+            background-color: hsl(199, 100%, 90%);
+            // color: $accent-clr;
+            color: #333;
         }
     }
 
