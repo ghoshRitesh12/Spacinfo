@@ -163,6 +163,7 @@ textarea, select {
   border-radius: 0.4rem;
   cursor: pointer;
   transition: 0.2s ease background-color;
+  -webkit-tap-highlight-color: transparent;
 }
 .mars-rover__topic--nav .btn:hover {
   background-color: hsl(199deg, 100%, 30%);
