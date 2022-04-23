@@ -58,30 +58,20 @@
             min-width: 100%;
         
             .btn {
-                // background-color: $accent-clr;
+                padding: .3rem 1rem;
+                font-size: 1.4rem;
+                color: #fff;
                 background-color: hsl(199, 100%, 45%);
                 border: none;
-                font-size: 1.4rem;
-                padding: .3rem 1rem;
-                color: #fff;
                 border-radius: $borders;
 
                 cursor: pointer;
                 transition: .2s ease background-color;
 
-                &:hover,
-                &:focus {
+                &:hover {
                     background-color:hsl(199, 100%, 30%);
                 }
             }
-
-            // .previous-btn {
-                
-            // }
-
-            // .next-btn {
-                
-            // }
         }
     }
 
