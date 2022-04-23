@@ -3,14 +3,12 @@ import { $ } from "./index.js";
 import { modifyDate } from "./apod.js";
 
 
-// preservence rover
+// preservence rover :-
 // `https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/latest_photos?api_key=${API_KEY}`
 
-
-// const MARS_URL = 
-// `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${API_KEY}`;
-
-
+ 
+// curiosity_rover :- 
+// `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?page=${page}&api_key=${API_KEY}`;
 
 
 const createCards = (resp) => {
@@ -43,21 +41,26 @@ const createCards = (resp) => {
     const fullImageLink = cardWrap.querySelector('.full-image');
     fullImageLink.href = resp.img_src;
 
-
-    $('.mars-rover__list').append(cardWrap);
-    
+    // appending <li> cards created to <ul>
+    $('.mars-rover__list').append(cardWrap);  
 };
 
-export async function getMarsPhoto() {
+export async function getMarsPhoto(page=1) {
     try {
+        // perseverance rover
         const MARS_URL = 
-        `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?page=1&api_key=${API_KEY}`;
+        `https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/latest_photos?page=${page}&api_key=${API_KEY}`;
 
         const response = await fetch(MARS_URL);
         const data = await response.json();
         const marsData = data.latest_photos;
 
-        marsData.forEach(item => {
+
+        // clearing the <ul> before creating cards
+        $('.mars-rover__list').innerHTML = '';
+
+        marsData.forEach(item => {     
+
             createCards(item);
         });
 

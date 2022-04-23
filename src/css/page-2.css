@@ -75,7 +75,7 @@ textarea, select {
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 
 /*-- End General Styles --*/
@@ -165,7 +165,7 @@ textarea, select {
   transition: 0.2s ease background-color;
 }
 .mars-rover__topic--nav .btn:hover, .mars-rover__topic--nav .btn:focus {
-  background-color: hsl(199deg, 100%, 38%);
+  background-color: hsl(199deg, 100%, 30%);
 }
 .mars-rover__list {
   display: grid;

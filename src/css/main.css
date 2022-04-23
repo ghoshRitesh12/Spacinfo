@@ -75,7 +75,7 @@ textarea, select {
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 
 /*-- End General Styles --*/

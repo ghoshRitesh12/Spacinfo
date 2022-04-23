@@ -93,13 +93,13 @@ navlinks.forEach(navlink => {
 
 
 // calling getApod() function on page load
-window.addEventListener('load', async () => {
+window.addEventListener('load', () => {
     
     // fetching apod information
-    await getApod();
+    getApod();
 
     // fetching mars information
-    await getMarsPhoto();
+    getMarsPhoto();
 
     // fetching information for page 3
 
@@ -125,8 +125,51 @@ const updateDebounceDate = debounce(date => {
 $('.sapod__search--date').addEventListener('input', e => {
     const searchedDate = e.target.value;
     updateDebounceDate(searchedDate)
-    // getSapod(searchedDate);
 });
+
+
+
+// mars-rover page button event listeners
+    // for previous button
+
+    let pageNo = 1;
+    addGlobalEventListener('click', '.previous-btn',
+    e => {
+        --pageNo;
+        pageNo = (pageNo <= 0) ? 1 : pageNo;
+        getMarsPhoto(pageNo);
+
+        if(pageNo < 4)
+            $('.next-btn').classList.remove('hidden');
+
+        if(pageNo===1)
+            $('.previous-btn').classList.add('hidden');
+    });
+
+    
+
+    // for next button
+    addGlobalEventListener('click', '.next-btn',
+    e => {
+        ++pageNo;
+        pageNo = (pageNo>4) ? pageNo-1 : pageNo;
+        getMarsPhoto(pageNo);
+
+        if(pageNo===4)
+            $('.next-btn').classList.add('hidden');
+
+        if(pageNo>1)
+            $('.previous-btn').classList.remove('hidden');
+        
+    });
+
+    
+
+    
+
+    
+
+
 
 
 // getting asteroids for page 3
@@ -134,6 +177,5 @@ $('.sapod__search--date').addEventListener('input', e => {
 
 
     
-
 
 /*---- End event Listeners ----*/
