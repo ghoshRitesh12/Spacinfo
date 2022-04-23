@@ -1,1 +1,166 @@
 @use '../components' as *;
+
+.mars-rover-page--wrapper {
+    // background-color: #1c1c1c;
+
+    min-height: 100vh;
+}
+
+.mars-rover {
+    position: relative;
+    padding: 1.5rem 1.3rem;
+    margin-inline: auto;
+
+    @include breakpoint(medium) {
+        padding: 2rem;
+    }
+
+    @include breakpoint(large) {
+        max-width: $content-width;
+        width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    // for topic title and navigation
+    &__topic {
+        padding: 0 0 1.2rem 0;
+
+        @include breakpoint(large) {
+            padding: 0 0 3rem 0;
+        }
+
+        &--title {
+            font-size: clamp(1.4rem, 3.3vmin, 2.8rem);
+            letter-spacing: 1px;
+            word-spacing: 1px;
+            font-weight: 700;
+            line-height: 1.5;
+            border-radius: $borders;
+
+            
+
+            @include breakpoint(large) {
+                width: fit-content;
+            }
+        }
+
+        &--nav {
+            // color: #fff;
+        
+            button {
+                background-color: $accent-clr;
+                border: none;
+                padding: .25em .35em;
+                color: #fff;
+                border-radius: $borders;
+
+            }
+        }
+    }
+
+    
+    // for the actual <ul> list 
+    &__list {
+        display: grid;
+        align-items: start;
+        align-content: start;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        gap: 2.8rem;
+
+        margin-block: 1rem;
+    }
+    
+    // <li>
+    &__items {
+        display: block;
+        padding-inline: 1rem;
+    }
+    
+    &__card {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        
+        min-height: 14rem;        
+        
+        font-family: $openSans;
+        box-shadow: 0 .3rem .5rem 0 rgba(0, 0, 0, 0.2);
+        color: #383838;
+        border-radius: .3rem;
+        overflow: hidden;
+
+        @include breakpoint(medium) {
+            margin-bottom: 1.5rem;
+        }
+
+        &--header {
+            min-width: 100%;
+            overflow: hidden;
+
+            &--img-src {
+                // display: block;
+                text-align: center;
+
+                min-width: 100%;
+                min-height: 14rem;
+                max-height: 14rem;
+
+
+                @include breakpoint(large) {
+
+                    transition: .3s ease transform;
+
+                    &:hover {
+                        transform: scale(1.5);
+                    }
+                }
+                
+            }
+        }
+
+        &--body {
+            width: 100%;
+            padding: .5rem 1rem 1rem 1rem;
+
+            font-size: clamp(.92rem, 3vmin, 1.02rem);
+
+            word-spacing: 1px;
+            letter-spacing: .4px;
+            font-weight: 500;
+
+
+            &-date {
+                line-height: 1.6;
+
+                .photo-id {
+                    color: hsl(199, 100%, 30%);
+                }
+            }
+
+            &-rover {
+                padding-top: 1rem;
+                width: 100%;
+            }            
+        }
+
+
+        .rover-status {
+            color: green;
+        }
+
+        .full-image {
+            display: block;
+            margin: 1rem 0 0 auto;
+            padding: .5em .6em;
+            width: fit-content;
+
+            font-size: clamp(.85rem, 3vmin, .92rem);
+            font-size: 500;
+            border-radius: $borders;
+            outline: 1px solid hsl(0, 100%, 70%);
+            color: hsl(0, 100%, 70%);
+        }
+    }
+
+}

@@ -1,6 +1,5 @@
-// "use strict";
-
 import { getApod, getSapod } from "./apod.js";
+import { getMarsPhoto } from "./mars-rover.js";
 import { getAsteroids } from "./asteroids.js";
 
 
@@ -94,7 +93,17 @@ navlinks.forEach(navlink => {
 
 
 // calling getApod() function on page load
-window.addEventListener('load', getApod);
+window.addEventListener('load', async () => {
+    
+    // fetching apod information
+    await getApod();
+
+    // fetching mars information
+    await getMarsPhoto();
+
+    // fetching information for page 3
+
+});
 
 // debouncing sapod request
 function debounce (callback, delay = 1000) {
@@ -119,6 +128,12 @@ $('.sapod__search--date').addEventListener('input', e => {
     // getSapod(searchedDate);
 });
 
+
+// getting asteroids for page 3
+    // getAsteroids();
+
+
+    
 
 
 /*---- End event Listeners ----*/

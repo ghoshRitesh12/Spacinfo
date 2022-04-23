@@ -75,12 +75,11 @@
     </header>
     
 
-    <!-- page-apod// page-marsRover// page-asteroids -->
+    <!-- (page__apod) // page__mars-rover// page__asteroids -->
     <main class="root page__apod">
 
         <!-- For Page 1 - Apod -->
-        <section class="apod-page--wrapper" id="apod">
-
+        <section class="apod-page--wrapper">
             
             <section class="apod-sapod__wrap">
     
@@ -266,7 +265,6 @@
     
                 </section>
                 
-    
             </section>
         
         </section>
@@ -274,7 +272,69 @@
 
         <!-- For Page 2 - Mars-rover -->
         <section class="mars-rover-page--wrapper" id="mars-rover">
-            This is page 2 or mars-rover
+            
+            <section class="mars-rover">
+
+                <div class="mars-rover__topic">
+                    <h1 class="mars-rover__topic--title">
+                        Mars Rover Photos
+                    </h1>
+
+                    <nav class="mars-rover__topic--nav">
+                        <button> < p </button>
+                        <button> > n </button>
+                    </nav>
+                </div>
+
+                <!-- container for storing <template-list> -->
+                <ul class="mars-rover__list"> </ul>
+
+                <!-- template for filling ul list acc to api data -->
+                <template id="mars-rover__template--list">
+                    <li class="mars-rover__items">
+
+                        <figure class="mars-rover__card">
+
+                            <div class="mars-rover__card--header">
+                                <img class="mars-rover__card--header--img-src"
+                                    src="https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/03450/opgs/edr/ncam/NRB_703757935EDR_S0941102NCAM00594M_.JPG" 
+                                    alt="latest mars-rover photo"
+                                    loading="lazy"
+                                />
+                            </div>
+    
+                            <figcaption class="mars-rover__card--body">
+
+                                <div class="mars-rover__card--body-date">
+
+                                    <p>Photo #<span class="photo-id">961070</span> taken:</p> 
+
+                                    <p class="earth-date">on April 23, 2022</p>
+
+                                    <p>Mars date(sol) - <span class="mars-date">3450</span></p>
+                                    
+                                </div>
+
+                                <p class="mars-rover__card--body-rover">
+                                    by <span class="rover-name">Curiosity</span> Rover <span class="rover-status">[active]</span> 
+                                </p>
+
+                                <a class="full-image" 
+                                href="https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/03450/opgs/edr/ncam/NRB_703757935EDR_S0941102NCAM00594M_.JPG"
+                                target="_blank">
+                                    Full image
+                                </a>
+                                
+                            </figcaption>
+
+                        </figure>
+
+                    </li>
+                </template>
+
+
+            </section>
+
         </section>
 
 

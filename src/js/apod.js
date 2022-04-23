@@ -14,7 +14,7 @@ function todaysDate() {
 }
 
 
-function modifyDate(inputDate) {
+export function modifyDate(inputDate) {
     const month = [
         "Jan", "Feb", "Mar", "Apr", "May", "Jun",
         "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"

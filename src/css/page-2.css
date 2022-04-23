@@ -100,4 +100,136 @@ textarea, select {
   100% {
     background-color: hsl(0deg, 0%, 20%);
   }
+}
+.mars-rover-page--wrapper {
+  min-height: 100vh;
+}
+
+.mars-rover {
+  position: relative;
+  padding: 1.5rem 1.3rem;
+  margin-inline: auto;
+}
+@media (min-width: 40em) {
+  .mars-rover {
+    padding: 2rem;
+  }
+}
+@media (min-width: 64em) {
+  .mars-rover {
+    max-width: 87rem;
+    width: 100%;
+    padding: 2rem 1.5rem;
+  }
+}
+.mars-rover__topic {
+  padding: 0 0 1.2rem 0;
+}
+@media (min-width: 64em) {
+  .mars-rover__topic {
+    padding: 0 0 3rem 0;
+  }
+}
+.mars-rover__topic--title {
+  font-size: clamp(1.4rem, 3.3vmin, 2.8rem);
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  font-weight: 700;
+  line-height: 1.5;
+  border-radius: 0.4rem;
+}
+@media (min-width: 64em) {
+  .mars-rover__topic--title {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+.mars-rover__topic--nav button {
+  background-color: hsl(0deg, 100%, 70%);
+  border: none;
+  padding: 0.25em 0.35em;
+  color: #fff;
+  border-radius: 0.4rem;
+}
+.mars-rover__list {
+  display: grid;
+  align-items: start;
+  align-content: start;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2.8rem;
+  margin-block: 1rem;
+}
+.mars-rover__items {
+  display: block;
+  padding-inline: 1rem;
+}
+.mars-rover__card {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  min-height: 14rem;
+  font-family: "Open Sans", sans-serif;
+  box-shadow: 0 0.3rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+  color: #383838;
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+@media (min-width: 40em) {
+  .mars-rover__card {
+    margin-bottom: 1.5rem;
+  }
+}
+.mars-rover__card--header {
+  min-width: 100%;
+  overflow: hidden;
+}
+.mars-rover__card--header--img-src {
+  text-align: center;
+  min-width: 100%;
+  min-height: 14rem;
+  max-height: 14rem;
+}
+@media (min-width: 64em) {
+  .mars-rover__card--header--img-src {
+    transition: 0.3s ease transform;
+  }
+  .mars-rover__card--header--img-src:hover {
+    transform: scale(1.5);
+  }
+}
+.mars-rover__card--body {
+  width: 100%;
+  padding: 0.5rem 1rem 1rem 1rem;
+  font-size: clamp(0.92rem, 3vmin, 1.02rem);
+  word-spacing: 1px;
+  letter-spacing: 0.4px;
+  font-weight: 500;
+}
+.mars-rover__card--body-date {
+  line-height: 1.6;
+}
+.mars-rover__card--body-date .photo-id {
+  color: hsl(199deg, 100%, 30%);
+}
+.mars-rover__card--body-rover {
+  padding-top: 1rem;
+  width: 100%;
+}
+.mars-rover__card .rover-status {
+  color: green;
+}
+.mars-rover__card .full-image {
+  display: block;
+  margin: 1rem 0 0 auto;
+  padding: 0.5em 0.6em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: clamp(0.85rem, 3vmin, 0.92rem);
+  font-size: 500;
+  border-radius: 0.4rem;
+  outline: 1px solid hsl(0deg, 100%, 70%);
+  color: hsl(0deg, 100%, 70%);
 }/*# sourceMappingURL=page-2.css.map */
