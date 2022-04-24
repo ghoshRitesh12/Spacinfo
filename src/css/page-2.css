@@ -155,6 +155,7 @@ textarea, select {
   min-width: 100%;
 }
 .mars-rover__topic--nav .btn {
+  display: block;
   padding: 0.2rem 1rem;
   font-size: 1.8rem;
   color: #fff;
@@ -164,9 +165,6 @@ textarea, select {
   cursor: pointer;
   transition: 0.2s ease background-color;
   -webkit-tap-highlight-color: transparent;
-}
-.mars-rover__topic--nav .btn:hover, .mars-rover__topic--nav .btn:focus {
-  background-color: hsl(199deg, 100%, 30%);
 }
 .mars-rover__list {
   display: grid;
@@ -187,9 +185,9 @@ textarea, select {
   flex-direction: column;
   min-height: 14rem;
   font-family: "Open Sans", sans-serif;
-  box-shadow: 0 0.3rem 0.5rem 0 rgba(255, 255, 255, 0.2);
   color: #fff;
   border-radius: 0.3rem;
+  box-shadow: 0 0.3rem 0.5rem 0 rgba(255, 255, 255, 0.2);
   overflow: hidden;
 }
 @media (min-width: 40em) {
@@ -204,10 +202,10 @@ textarea, select {
   overflow: hidden;
 }
 .mars-rover__card--header--img-src {
-  text-align: center;
   min-width: 100%;
   min-height: 14rem;
   max-height: 14rem;
+  text-align: center;
 }
 @media (min-width: 64em) {
   .mars-rover__card--header--img-src {
@@ -221,9 +219,9 @@ textarea, select {
   width: 100%;
   padding: 0.5rem 1rem 1rem 1rem;
   font-size: clamp(0.92rem, 3vmin, 1.02rem);
+  font-weight: 500;
   word-spacing: 1px;
   letter-spacing: 0.4px;
-  font-weight: 500;
   border-top: 1px solid rgba(255, 255, 255, 0.35);
 }
 .mars-rover__card--body-date {
@@ -237,7 +235,7 @@ textarea, select {
   width: 100%;
 }
 .mars-rover__card .rover-status {
-  color: hsl(115deg, 98%, 34%);
+  color: hsl(115deg, 51%, 55%);
 }
 .mars-rover__card .full-image {
   display: block;

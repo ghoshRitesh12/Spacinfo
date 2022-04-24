@@ -163,7 +163,7 @@ $('.sapod__search--date').addEventListener('input', e => {
 
 
         // for blurring the focus state of the button
-        setTimeout(() => e.target.blur(), 250)
+        // setTimeout(() => e.target.blur(), 250)
     });
 
     
@@ -183,7 +183,7 @@ $('.sapod__search--date').addEventListener('input', e => {
         
 
         // for blurring the focus state of the button
-        setTimeout(() => e.target.blur(), 250)
+        // setTimeout(() => e.target.blur(), 250)
     });
 
     

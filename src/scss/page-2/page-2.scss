@@ -55,6 +55,8 @@
             min-width: 100%;
         
             .btn {
+                display: block;
+
                 padding: .2rem 1rem;
                 font-size: 1.8rem;
                 color: #fff;
@@ -67,10 +69,10 @@
 
                 -webkit-tap-highlight-color: transparent;
 
-                &:hover,
-                &:focus {
-                    background-color:hsl(199, 100%, 30%);
-                }
+                // &:hover,
+                // &:focus {
+                //     background-color:hsl(199, 100%, 30%);
+                // }
             }
         }
     }
@@ -102,10 +104,9 @@
         min-height: 14rem;        
         
         font-family: $openSans;
-        box-shadow: 0 .3rem .5rem 0 rgba(255, 255, 255, 0.2);
-        // color: #383838;
         color: #fff;
         border-radius: .3rem;
+        box-shadow: 0 .3rem .5rem 0 rgba(255, 255, 255, 0.2);
         overflow: hidden;
 
         @include breakpoint(medium) {
@@ -119,12 +120,11 @@
             overflow: hidden;
 
             &--img-src {
-                text-align: center;
-
                 min-width: 100%;
                 min-height: 14rem;
                 max-height: 14rem;
-
+                
+                text-align: center;
 
                 @include breakpoint(large) {
 
@@ -134,7 +134,6 @@
                         transform: scale(1.5);
                     }
                 }
-                
             }
         }
 
@@ -143,10 +142,10 @@
             padding: .5rem 1rem 1rem 1rem;
 
             font-size: clamp(.92rem, 3vmin, 1.02rem);
+            font-weight: 500;
 
             word-spacing: 1px;
             letter-spacing: .4px;
-            font-weight: 500;
             border-top: 1px solid rgba(255, 255, 255, 0.35);
 
             &-date {
@@ -165,7 +164,7 @@
 
 
         .rover-status {
-            color: hsl(115, 98%, 34%);
+            color: hsl(115, 51%, 55%);
         }
 
         .full-image {

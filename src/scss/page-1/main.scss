@@ -309,11 +309,11 @@ body {
 
     margin-top: auto;
     width: 100%; 
-    // background-color: $primary-clr2;
     background-color: $primary-clr;
     color: #fff;
 
-    // border-top: 1px solid rgba(255, 255, 255, 0.2);
+    word-spacing: 1px;
+    letter-spacing: .5px;
 
     &__content {
         @include flex(center,center);
@@ -324,7 +324,6 @@ body {
     &__link {
         display: inline-block;
         color: $accent-clr;
-        // padding-inline: .4rem;
     }
 }
 

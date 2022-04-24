@@ -368,6 +368,8 @@ body {
   width: 100%;
   background-color: #1c1c1c;
   color: #fff;
+  word-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 .footer__content {
   display: flex;
