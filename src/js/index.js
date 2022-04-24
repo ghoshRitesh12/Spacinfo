@@ -88,6 +88,7 @@ navlinks.forEach(navlink => {
         // adding/removing according classes
         $('.root').classList.remove('page__apod', 'page__mars-rover', 'page__asteroids');
         $('.root').classList.add(`page__${e.target.getAttribute('data-title').toLowerCase()}`);
+
     });
 });
 
@@ -98,12 +99,27 @@ window.addEventListener('load', () => {
     // fetching apod information
     getApod();
 
-    // fetching mars information
     getMarsPhoto();
-
+    
     // fetching information for page 3
-
+    
 });
+
+
+// fetching mars information
+$('[data-title="Mars-Rover"]').addEventListener('click',
+e => {
+    getMarsPhoto();
+});
+
+
+// fetching mars information
+// $('data-title="Asteroids"').addEventListener('click',
+// e => {
+//     getMarsPhoto();
+// });
+
+
 
 // debouncing sapod request
 function debounce (callback, delay = 1000) {
@@ -144,6 +160,10 @@ $('.sapod__search--date').addEventListener('input', e => {
 
         if(pageNo===1)
             $('.previous-btn').classList.add('hidden');
+
+
+        // for blurring the focus state of the button
+        setTimeout(() => e.target.blur(), 250)
     });
 
     
@@ -161,16 +181,12 @@ $('.sapod__search--date').addEventListener('input', e => {
         if(pageNo>1)
             $('.previous-btn').classList.remove('hidden');
         
+
+        // for blurring the focus state of the button
+        setTimeout(() => e.target.blur(), 250)
     });
 
     
-
-    
-
-    
-
-
-
 
 // getting asteroids for page 3
     // getAsteroids();

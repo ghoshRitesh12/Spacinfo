@@ -1,11 +1,8 @@
 @use '../components' as *;
 
 .mars-rover-page--wrapper {
-    
-
     min-height: 100vh;
     background-color: #1f1f1f;
-    
 }
 
 .mars-rover {
@@ -58,8 +55,8 @@
             min-width: 100%;
         
             .btn {
-                padding: .3rem 1rem;
-                font-size: 1.4rem;
+                padding: .2rem 1rem;
+                font-size: 1.8rem;
                 color: #fff;
                 background-color: hsl(199, 100%, 45%);
                 border: none;
@@ -70,7 +67,8 @@
 
                 -webkit-tap-highlight-color: transparent;
 
-                &:hover {
+                &:hover,
+                &:focus {
                     background-color:hsl(199, 100%, 30%);
                 }
             }
@@ -115,11 +113,12 @@
         }
 
         &--header {
+            display: grid;
+            place-items: center;
             min-width: 100%;
             overflow: hidden;
 
             &--img-src {
-                display: block;
                 text-align: center;
 
                 min-width: 100%;

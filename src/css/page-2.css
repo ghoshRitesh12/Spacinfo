@@ -155,8 +155,8 @@ textarea, select {
   min-width: 100%;
 }
 .mars-rover__topic--nav .btn {
-  padding: 0.3rem 1rem;
-  font-size: 1.4rem;
+  padding: 0.2rem 1rem;
+  font-size: 1.8rem;
   color: #fff;
   background-color: hsl(199deg, 100%, 45%);
   border: none;
@@ -165,7 +165,7 @@ textarea, select {
   transition: 0.2s ease background-color;
   -webkit-tap-highlight-color: transparent;
 }
-.mars-rover__topic--nav .btn:hover {
+.mars-rover__topic--nav .btn:hover, .mars-rover__topic--nav .btn:focus {
   background-color: hsl(199deg, 100%, 30%);
 }
 .mars-rover__list {
@@ -198,11 +198,12 @@ textarea, select {
   }
 }
 .mars-rover__card--header {
+  display: grid;
+  place-items: center;
   min-width: 100%;
   overflow: hidden;
 }
 .mars-rover__card--header--img-src {
-  display: block;
   text-align: center;
   min-width: 100%;
   min-height: 14rem;
