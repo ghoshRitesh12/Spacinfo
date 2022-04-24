@@ -1,7 +1,6 @@
-const $ = a => document.querySelector(a);
-// const $$ = abc  => document.querySelectorAll(abc);
+import { $ } from "./index.js";
+import { API_KEY } from "./apikey.js";
 
-export const API_KEY = 'vYQfJQy4vInZSIgNWhuQvlKeE3phIWj6pbLJyJ4J';
 const APOD_URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
 
 const addZero = (time) => time<10 ? `0${time}` : time;
@@ -142,30 +141,30 @@ export async function getApod() {
     try {
         // const response = await fetch(APOD_URL);
         // const apodData = await response.json();
-        let apiData = '';
-
-        const cache = await caches.open(CACHE_NAME);
+        let cacheResp, apiData;
+        const apodCache = await caches.open(CACHE_NAME);
         const newDate = todaysDate();
 
-        let cacheResp = await cache.match(APOD_URL);
-        if(cacheResp) {
+        caches.has(CACHE_NAME)
+        .then(async () => {
+            cacheResp = await caches.match(APOD_URL);
             apiData = await cacheResp.json();
 
             if(newDate !== apiData.date) {
-                await cache.add(APOD_URL);
-                cacheResp = await cache.match(APOD_URL);
+                await apodCache.add(APOD_URL);
+                cacheResp = await caches.match(APOD_URL);
                 apiData = await cacheResp.json();
             }
-        } 
-        else {
-            await cache.add(APOD_URL);
-            cacheResp = await cache.match(APOD_URL);
+        })
+        .catch(async () => {
+            await apodCache.add(APOD_URL);
+            cacheResp = await caches.match(APOD_URL);
             apiData = await cacheResp.json();
-        }
-
-        createApod(apiData);
+        })
+        .finally(() => {
+            createApod(apiData);
+        });
     } 
-    
     catch (err) {
         console.error(err);
     }
@@ -173,7 +172,6 @@ export async function getApod() {
 
 
 // SAPOD ASYNC API FETCH
-
 function createSapod (respData) {
 
     // cloning <sapod> template

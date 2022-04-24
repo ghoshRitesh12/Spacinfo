@@ -206,6 +206,10 @@ textarea, select {
   min-height: 14rem;
   max-height: 14rem;
   text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 @media (min-width: 64em) {
   .mars-rover__card--header--img-src {

@@ -1,6 +1,7 @@
-import { API_KEY } from "./apod.js";
 import { $ } from "./index.js";
 import { modifyDate } from "./apod.js";
+import { API_KEY } from "./apikey.js";
+
 
 
 // preservence rover :-
@@ -38,6 +39,7 @@ const createCards = (resp) => {
     if(resp.rover.status !== "active")
         roverStatus.style.color = "#ff407c";
 
+    // for full image link
     const fullImageLink = cardWrap.querySelector('.full-image');
     fullImageLink.href = resp.img_src;
 
@@ -60,7 +62,6 @@ export async function getMarsPhoto(page=1) {
         $('.mars-rover__list').innerHTML = '';
 
         marsData.forEach(item => {     
-
             createCards(item);
         });
 

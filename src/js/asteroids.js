@@ -1,4 +1,4 @@
-import { API_KEY } from "./apod.js";
+import { API_KEY } from "./apikey.js";
 
 const start_date = "2021-04-01"
 const end_date = "2021-04-05"

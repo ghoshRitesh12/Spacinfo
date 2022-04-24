@@ -340,10 +340,10 @@ body {
   border-radius: 2rem;
 }
 .hamburger .top--bar {
-  margin-bottom: 0.9rem;
+  margin-bottom: 1rem;
 }
 .hamburger .bottom--bar {
-  margin-top: 0.9rem;
+  margin-top: 1rem;
 }
 .hamburger.expanded .top--bar {
   margin-bottom: 0;

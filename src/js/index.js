@@ -93,6 +93,32 @@ navlinks.forEach(navlink => {
 });
 
 
+
+
+// for caching resources
+// const CACH_NAME = "Spacinfo";
+// const urls = [
+//     "/",
+//     "/index.html",
+//     "/src/js/index.js",
+//     "/src/js/apikey.js",
+//     "/src/js/apod.js",
+//     "/src/js/mars-rover.js"
+// ]
+
+// window.addEventListener('load', async () => {
+//     const cache = await caches.open(CACH_NAME);
+//     cache.addAll(urls);
+// });
+
+// window.addEventListener('fetch', e => {
+//     caches.match(e.request)
+//     .then(response => {
+//         return response || fetch(e.request);
+//     })
+// })
+
+
 // calling getApod() function on page load
 window.addEventListener('load', () => {
     

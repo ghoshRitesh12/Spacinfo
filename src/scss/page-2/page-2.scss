@@ -125,6 +125,7 @@
                 max-height: 14rem;
                 
                 text-align: center;
+                user-select: none;
 
                 @include breakpoint(large) {
 
