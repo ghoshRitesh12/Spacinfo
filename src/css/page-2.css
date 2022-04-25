@@ -187,7 +187,7 @@ textarea, select {
   font-family: "Open Sans", sans-serif;
   color: #fff;
   border-radius: 0.3rem;
-  box-shadow: 0 0.3rem 0.5rem 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0.3rem 0.5rem 0 rgba(0, 0, 0, 0.75);
   overflow: hidden;
 }
 @media (min-width: 40em) {
@@ -226,32 +226,33 @@ textarea, select {
   font-weight: 500;
   word-spacing: 1px;
   letter-spacing: 0.4px;
-  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 .mars-rover__card--body-date {
   line-height: 1.6;
 }
 .mars-rover__card--body-date .photo-id {
-  color: hsl(199deg, 100%, 65%);
+  color: hsl(199deg, 100%, 80%);
 }
 .mars-rover__card--body-rover {
   padding-top: 1rem;
   width: 100%;
 }
 .mars-rover__card .rover-status {
-  color: hsl(115deg, 51%, 55%);
+  color: hsl(115deg, 100%, 85%);
 }
 .mars-rover__card .full-image {
   display: block;
   margin: 1rem 0 0 auto;
-  padding: 0.5em 0.6em;
+  padding: 0.5em 0.65em;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  font-size: clamp(0.85rem, 3vmin, 0.92rem);
+  font-size: clamp(0.8rem, 3vmin, 0.92rem);
   font-size: 500;
   border-radius: 0.4rem;
-  outline: 2px solid hsl(199deg, 100%, 45%);
-  background-color: hsl(199deg, 100%, 90%);
+  outline: 1px solid hsl(199deg, 100%, 45%);
+  outline-offset: 1px;
+  background-color: hsl(199deg, 100%, 92%);
   color: #333;
 }/*# sourceMappingURL=page-2.css.map */

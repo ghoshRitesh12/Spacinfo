@@ -106,7 +106,7 @@
         font-family: $openSans;
         color: #fff;
         border-radius: .3rem;
-        box-shadow: 0 .3rem .5rem 0 rgba(255, 255, 255, 0.2);
+        box-shadow: 0 .3rem .5rem 0 rgb(0 0 0 / .75);
         overflow: hidden;
 
         @include breakpoint(medium) {
@@ -147,13 +147,13 @@
 
             word-spacing: 1px;
             letter-spacing: .4px;
-            border-top: 1px solid rgba(255, 255, 255, 0.35);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
 
             &-date {
                 line-height: 1.6;
 
                 .photo-id {
-                    color: hsl(199, 100%, 65%);
+                    color: hsl(199, 100%, 80%);
                 }
             }
 
@@ -165,20 +165,22 @@
 
 
         .rover-status {
-            color: hsl(115, 51%, 55%);
+            color: hsl(115, 100%, 85%);
         }
 
         .full-image {
             display: block;
             margin: 1rem 0 0 auto;
-            padding: .5em .6em;
+            padding: .5em .65em;
             width: fit-content;
 
-            font-size: clamp(.85rem, 3vmin, .92rem);
+            font-size: clamp(.8rem, 3vmin, .92rem);
             font-size: 500;
             border-radius: $borders;
-            outline: 2px solid $accent-clr;
-            background-color: hsl(199, 100%, 90%);
+            outline: 1px solid hsl(199, 100%, 45%);
+            outline-offset: 1px;
+
+            background-color: hsl(199, 100%, 92%);
             // color: $accent-clr;
             color: #333;
         }
