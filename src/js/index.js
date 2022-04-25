@@ -124,6 +124,7 @@ window.addEventListener('load', () => {
     
     // fetching apod information
     getApod();
+    
 
     getMarsPhoto();
     
@@ -173,7 +174,7 @@ $('.sapod__search--date').addEventListener('input', e => {
 
 // mars-rover page button event listeners
     // for previous button
-
+    $('.next-btn')
     let pageNo = 1;
     addGlobalEventListener('click', '.previous-btn',
     e => {
@@ -182,10 +183,11 @@ $('.sapod__search--date').addEventListener('input', e => {
         getMarsPhoto(pageNo);
 
         if(pageNo < 4)
-            $('.next-btn').classList.remove('hidden');
+            $$('.next-btn').forEach(item => item.classList.remove('hidden'));
+            
 
         if(pageNo===1)
-            $('.previous-btn').classList.add('hidden');
+            $$('.previous-btn').forEach(item => item.classList.add('hidden'));
 
 
         // for blurring the focus state of the button
@@ -202,10 +204,10 @@ $('.sapod__search--date').addEventListener('input', e => {
         getMarsPhoto(pageNo);
 
         if(pageNo===4)
-            $('.next-btn').classList.add('hidden');
+            $$('.next-btn').forEach(item => item.classList.add('hidden'));
 
         if(pageNo>1)
-            $('.previous-btn').classList.remove('hidden');
+            $$('.previous-btn').forEach(item => item.classList.remove('hidden'));
         
 
         // for blurring the focus state of the button

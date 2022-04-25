@@ -173,6 +173,17 @@ textarea, select {
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 2.8rem;
   margin-block: 1rem;
+  min-height: 30vh;
+}
+.mars-rover__list .mars-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  line-height: 2;
+  color: white;
 }
 .mars-rover__items {
   display: block;

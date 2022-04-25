@@ -3,6 +3,12 @@ import { modifyDate } from "./apod.js";
 import { API_KEY } from "./apikey.js";
 
 
+const empty = 
+`<li class="mars-rover__items mars-404"> 
+    Oops, looks like the photo list you searched 
+    for isn't present at this moment, 
+    please navigate back to the previous list
+</li>`;
 
 // preservence rover :-
 // `https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/latest_photos?api_key=${API_KEY}`
@@ -53,13 +59,19 @@ export async function getMarsPhoto(page=1) {
         const MARS_URL = 
         `https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/latest_photos?page=${page}&api_key=${API_KEY}`;
 
+
         const response = await fetch(MARS_URL);
         const data = await response.json();
         const marsData = data.latest_photos;
 
-
         // clearing the <ul> before creating cards
         $('.mars-rover__list').innerHTML = '';
+
+        // check for no photos?
+        if(!marsData.length) {
+            $('.mars-rover__list').innerHTML = empty;
+        }
+
 
         marsData.forEach(item => {     
             createCards(item);

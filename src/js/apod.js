@@ -162,7 +162,10 @@ export async function getApod() {
             apiData = await cacheResp.json();
         })
         .finally(() => {
-            createApod(apiData);
+            createApod(apiData)
+            .then(() => {
+                window.scrollTo(0,0);
+            })
         });
     } 
     catch (err) {
@@ -235,6 +238,7 @@ export const getSapod = async (keyDate) => {
         const response = await fetch(SAPOD_URL);
         const sapodData = await response.json();
         createSapod(sapodData);
+
         
     } catch (err) {
         console.error(err);
