@@ -1,6 +1,6 @@
 import { getApod, getSapod } from "./apod.js";
 import { getMarsPhoto } from "./mars-rover.js";
-import { getAsteroids } from "./asteroids.js";
+import { getPlanet } from "./planets.js";
 
 
 /*---- Selectors ----*/
@@ -86,7 +86,7 @@ navlinks.forEach(navlink => {
         $('title').textContent = `Spacinfo | ${e.target.getAttribute('data-title')}`;
 
         // adding/removing according classes
-        $('.root').classList.remove('page__apod', 'page__mars-rover', 'page__asteroids');
+        $('.root').classList.remove('page__apod', 'page__mars-rover', 'page__planets');
         $('.root').classList.add(`page__${e.target.getAttribute('data-title').toLowerCase()}`);
 
     });
@@ -129,7 +129,8 @@ window.addEventListener('load', () => {
     getMarsPhoto();
     
     // fetching information for page 3
-    
+    // getPlanet();
+
 });
 
 
@@ -141,9 +142,9 @@ e => {
 
 
 // fetching mars information
-// $('data-title="Asteroids"').addEventListener('click',
+// $('data-title="Planets"').addEventListener('click',
 // e => {
-//     getMarsPhoto();
+//     getPlanet();
 // });
 
 

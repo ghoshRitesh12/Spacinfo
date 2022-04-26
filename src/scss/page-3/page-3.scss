@@ -1,1 +1,122 @@
 @use '../components' as *;
+
+.planets-page--wrapper {
+    background-color: #1f1f1f;
+    // background-attachment: fixed;
+}
+
+
+.planets {
+    position: relative;
+    padding: 1.5rem 1.3rem;
+    margin-inline: auto;
+
+    color: white;
+
+    @include breakpoint(medium) {
+        padding: 2rem;
+    }
+
+    @include breakpoint(large) {
+        max-width: $content-width;
+        width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    &__topic {
+        padding: 0 0 1.2rem 0;
+
+        @include breakpoint(large) {
+            padding: 0 0 3rem 0;
+        }
+
+        &--title {
+            font-size: clamp(1.4rem, 3.3vmin, 2.8rem);
+            letter-spacing: 1px;
+            word-spacing: 1px;
+            font-weight: 700;
+            line-height: 1.5;
+            border-radius: $borders;
+
+            // color: #fff;
+
+            @include breakpoint(large) {
+                width: fit-content;
+            }
+        }
+
+        &--select-menu__wrap {
+            position: relative;
+            width: fit-content;
+
+            margin-block: 1rem;
+            margin-inline: auto;
+
+            .custom-arrow {
+                --size: .6em;
+                // or block
+                display: block;
+    
+                position: absolute;
+                inset: 0 0 auto auto;
+                width: 2.5rem;
+                height: 100%;
+    
+                background-color: #3b3c47;
+                pointer-events: none;
+                border-radius: .4rem;
+
+                &::after,
+                &::before {
+                    content: '';
+
+                    position: absolute;
+                    left: 50%; top: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 0;
+                    height: 0;
+                }
+
+                &::before {
+                    border-left: var(--size) solid transparent;
+                    border-right: var(--size) solid transparent;
+                    border-bottom: var(--size) solid rgba(255, 255, 255, 0.5);
+
+                    top: 39%;
+                }
+
+                &::after {
+                    border-left: var(--size) solid transparent;
+                    border-right: var(--size) solid transparent;
+                    border-top: var(--size) solid rgb(255 255 255 /.5);
+
+                    top: 61%;
+                }
+            }
+        }
+
+        &--select-menu {
+            font-size: clamp(1.05rem, 3vmin, 1.2rem);
+            padding: .7em 2em .7em .8em;
+            background-color: #2c2c31;
+            color: white;
+
+            border: none;
+            border-radius: .4rem;
+            outline: none;
+
+            option {
+                box-shadow: none;
+                border: none;
+                outline: none;
+
+                border-radius: 1rem;
+
+            }
+
+        }
+        
+    }
+
+    
+}

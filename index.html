@@ -54,8 +54,8 @@
 
                 <!-- page 3 -->
                 <li class="nav-bar__items">
-                    <a href="asteroids" class="nav-bar__links" data-title="Asteroids">
-                        asteroids
+                    <a href="planets" class="nav-bar__links" data-title="Planets">
+                        planets
                     </a>
                 </li>
 
@@ -75,9 +75,10 @@
     </header>
     
 
-    <!-- (page__apod) // page__mars-rover // page__asteroids -->
-    <!-- <main class="root page__apod"> -->
-    <main class="root page__mars-rover">
+    <!-- (page__apod) // page__mars-rover // page__planets -->
+    <main class="root page__apod">
+    <!-- <main class="root page__mars-rover"> -->
+    <!-- <main class="root page__planets"> -->
 
         <!-- For Page 1 - Apod -->
         <section class="apod-page--wrapper">
@@ -272,7 +273,7 @@
 
 
         <!-- For Page 2 - Mars-rover -->
-        <section class="mars-rover-page--wrapper" id="mars-rover">
+        <section class="mars-rover-page--wrapper">
             
             <section class="mars-rover">
 
@@ -335,8 +336,9 @@
                     </li>
                 </template>
 
+
+                <!-- for bottom navigation -->
                 <nav class="mars-rover__topic--nav">
-                    <!-- <  *toggle hidden class* -->
                     <button class="btn previous-btn hidden"> &lt; </button>
                     <!-- > -->
                     <button class="btn next-btn"> &gt; </button>
@@ -347,9 +349,45 @@
         </section>
 
 
-        <!-- For Page 3 - Asteroids -->
-        <section class="asteroids-page--wrapper" id="asteroids">
-            this is page 3 or information about asteroids
+        <!-- For Page 3 - Planets -->
+        <section class="planets-page--wrapper" id="planets">
+
+            <section class="planets">
+
+                <div class="planets__topic">
+
+                    <h1 class="planets__topic--title">
+                        Get Information about planets 
+                        in our Solar System
+                    </h1>
+
+                    <section class="planets__topic--select-menu__wrap">
+
+                        <select class="planets__topic--select-menu" 
+                        name="Planets" id="">
+                            <!-- <optgroup label="Planets">  -->
+                                <option> -Planets- </option>
+                                <option value="Mercury"> Mercury </option>
+                                <option value="Venus"> Venus </option>
+                                <option value="Earth"> Earth </option>
+                                <option value="Mars"> Mars </option>
+                                <option value="Jupiter"> Jupiter </option>
+                                <option value="Saturn"> Saturn </option>
+                                <option value="Uranus"> Uranus </option>
+                                <option value="Neptune"> Neptune </option>
+                            <!-- </optgroup> -->
+                            
+                        </select>
+                        <span class="custom-arrow"></span>
+
+                    </section>
+
+                </div>
+
+            </section>
+
+            
+
         </section>
         
 

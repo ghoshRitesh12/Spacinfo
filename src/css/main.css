@@ -376,7 +376,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  font-size: clamp(0.85rem, 2.5vmin, 0.95rem);
+  font-size: clamp(0.8rem, 2.5vmin, 0.95rem);
 }
 .footer__link {
   display: inline-block;
@@ -385,7 +385,7 @@ body {
 
 .root .apod-page--wrapper,
 .root .mars-rover-page--wrapper,
-.root .asteroids-page--wrapper {
+.root .planets-page--wrapper {
   display: none;
 }
 
@@ -397,6 +397,6 @@ body {
   display: block;
 }
 
-.page__asteroids .asteroids-page--wrapper {
+.page__planets .planets-page--wrapper {
   display: block;
 }/*# sourceMappingURL=main.css.map */

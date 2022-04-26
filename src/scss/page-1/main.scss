@@ -44,12 +44,6 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     font-family: sans-serif;
-
-    // scrollbar-width: thin;
-
-    // &::-webkit-scrollbar {
-    //     display: none;
-    // }
 }
 
 .head {
@@ -318,7 +312,7 @@ body {
     &__content {
         @include flex(center,center);
         padding: 1rem;
-        font-size: clamp(.85rem, 2.5vmin, .95rem);
+        font-size: clamp(.8rem, 2.5vmin, .95rem);
     }
 
     &__link {
@@ -332,7 +326,7 @@ body {
 
     .apod-page--wrapper,
     .mars-rover-page--wrapper,
-    .asteroids-page--wrapper {
+    .planets-page--wrapper {
         display: none;
     }
 }
@@ -349,8 +343,8 @@ body {
     }
 }
 
-.page__asteroids {
-    .asteroids-page--wrapper {
+.page__planets {
+    .planets-page--wrapper {
         display: block;
     }
 }

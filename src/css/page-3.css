@@ -100,4 +100,104 @@ textarea, select {
   100% {
     background-color: hsl(0deg, 0%, 20%);
   }
+}
+.planets-page--wrapper {
+  background-color: #1f1f1f;
+}
+
+.planets {
+  position: relative;
+  padding: 1.5rem 1.3rem;
+  margin-inline: auto;
+  color: white;
+}
+@media (min-width: 40em) {
+  .planets {
+    padding: 2rem;
+  }
+}
+@media (min-width: 64em) {
+  .planets {
+    max-width: 87rem;
+    width: 100%;
+    padding: 2rem 1.5rem;
+  }
+}
+.planets__topic {
+  padding: 0 0 1.2rem 0;
+}
+@media (min-width: 64em) {
+  .planets__topic {
+    padding: 0 0 3rem 0;
+  }
+}
+.planets__topic--title {
+  font-size: clamp(1.4rem, 3.3vmin, 2.8rem);
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  font-weight: 700;
+  line-height: 1.5;
+  border-radius: 0.4rem;
+}
+@media (min-width: 64em) {
+  .planets__topic--title {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+.planets__topic--select-menu__wrap {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-block: 1rem;
+  margin-inline: auto;
+}
+.planets__topic--select-menu__wrap .custom-arrow {
+  --size: .6em;
+  display: block;
+  position: absolute;
+  inset: 0 0 auto auto;
+  width: 2.5rem;
+  height: 100%;
+  background-color: #3b3c47;
+  pointer-events: none;
+  border-radius: 0.4rem;
+}
+.planets__topic--select-menu__wrap .custom-arrow::after, .planets__topic--select-menu__wrap .custom-arrow::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+}
+.planets__topic--select-menu__wrap .custom-arrow::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid rgba(255, 255, 255, 0.5);
+  top: 39%;
+}
+.planets__topic--select-menu__wrap .custom-arrow::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid rgba(255, 255, 255, 0.5);
+  top: 61%;
+}
+.planets__topic--select-menu {
+  font-size: clamp(1.05rem, 3vmin, 1.2rem);
+  padding: 0.7em 2em 0.7em 0.8em;
+  background-color: #2c2c31;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  outline: none;
+}
+.planets__topic--select-menu option {
+  box-shadow: none;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
 }/*# sourceMappingURL=page-3.css.map */
