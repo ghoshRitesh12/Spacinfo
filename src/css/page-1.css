@@ -90,6 +90,7 @@
   overflow: auto;
   background-image: linear-gradient(to right bottom, #1c1c1c 40%, #252525 40%);
   background-attachment: fixed;
+  background-size: cover;
 }
 
 .hstretch {
@@ -367,8 +368,9 @@
 .sapod-section--wrap {
   position: relative;
   z-index: 100;
-  background-attachment: fixed;
   background-image: linear-gradient(to right bottom, #252525 60%, #1c1c1c 40%);
+  background-attachment: fixed;
+  background-size: cover;
 }
 @media (min-width: 64em) {
   .sapod-section--wrap {

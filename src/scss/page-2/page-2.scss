@@ -2,23 +2,18 @@
 
 .mars-rover-page--wrapper {
     min-height: 100vh;
-    background: repeating-linear-gradient(40deg, #1f1f1f 30%, #222 50%);
-    background-attachment: fixed;
-    // background-attachment: scroll;
-    
-    
-    @include breakpoint(large) {
-        background: repeating-linear-gradient(45deg, #1f1f1f 60%, #1c1c1c 100%);
-        background-attachment: fixed;
-    }
+    background-color: #1f1f1f;
 }
 
 .mars-rover {
-    $accent-clr: hsl(199, 100%, 45%);
-
     position: relative;
     padding: 1.5rem 1.3rem;
     margin-inline: auto;
+
+    background: linear-gradient(40deg, #242424 40%, #1f1f1f 40%);
+    background-attachment: fixed;
+    background-size: cover;
+    // background-attachment: scroll;
 
     @include breakpoint(medium) {
         padding: 2rem;
@@ -28,6 +23,9 @@
         max-width: $content-width;
         width: 100%;
         padding: 2rem 1.5rem;
+
+        background: repeating-linear-gradient(45deg, #1f1f1f 60%, #1c1c1c 100%);
+        background-attachment: fixed;
     }
 
     // for topic title and navigation
@@ -216,7 +214,6 @@
             outline-offset: 1px;
 
             background-color: hsl(199, 100%, 92%);
-            // color: $accent-clr;
             color: #333;
         }
     }
