@@ -110,8 +110,8 @@ textarea, select {
   position: relative;
   padding: 1.5rem 1.3rem;
   margin-inline: auto;
-  background: linear-gradient(40deg, #242424 40%, #1f1f1f 40%);
-  background-attachment: fixed;
+  background: linear-gradient(83deg, #242424 80%, #1f1f1f 80%);
+  background-attachment: scroll;
   background-size: cover;
 }
 @media (min-width: 40em) {
