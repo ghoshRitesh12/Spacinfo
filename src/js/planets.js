@@ -9,13 +9,14 @@ import { API_KEY } from "./apikey.js";
 
 export async function getPlanet(planet) {
     try {
-        planet = 'mercury';
+        // planet = 'mercury';
         const PLANET_URL = 
         `https://api.le-systeme-solaire.net/rest/bodies/${planet}`;
 
         const response =  await fetch(PLANET_URL);
-        const asteroidData = await response.json();
-        console.log(asteroidData);
+        const planetData = await response.json();
+        console.log(planetData);
+        
     } catch (err) {
         console.error(err);
     }

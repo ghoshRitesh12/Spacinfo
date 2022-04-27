@@ -217,8 +217,14 @@ $('.sapod__search--date').addEventListener('input', e => {
 
     
 
-// getting asteroids for page 3
-    // getAsteroids();
+// getting planets for page 3
+    // delegated click event on options
+    addGlobalEventListener('click', 'option[value]',
+    e => {
+        const { value } = e.target;
+        getPlanet(value.toLowerCase());
+
+    })
 
 
     

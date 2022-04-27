@@ -2,7 +2,6 @@
 
 .planets-page--wrapper {
     background-color: #1f1f1f;
-    // background-attachment: fixed;
 }
 
 
@@ -49,12 +48,11 @@
             position: relative;
             width: fit-content;
 
-            margin-block: 1rem;
+            margin-block: 2rem 1rem;
             margin-inline: auto;
 
             .custom-arrow {
-                --size: .6em;
-                // or block
+                --size: .45em;
                 display: block;
     
                 position: absolute;
@@ -62,7 +60,8 @@
                 width: 2.5rem;
                 height: 100%;
     
-                background-color: #3b3c47;
+                // background-color: #3b3c47;
+                background-color: #4e4f5c;
                 pointer-events: none;
                 border-radius: .4rem;
 
@@ -82,7 +81,7 @@
                     border-right: var(--size) solid transparent;
                     border-bottom: var(--size) solid rgba(255, 255, 255, 0.5);
 
-                    top: 39%;
+                    top: 41%;
                 }
 
                 &::after {
@@ -96,9 +95,10 @@
         }
 
         &--select-menu {
+            font-family: $openSans;
             font-size: clamp(1.05rem, 3vmin, 1.2rem);
-            padding: .7em 2em .7em .8em;
-            background-color: #2c2c31;
+            padding: .7em 2.5em .7em .7em;
+            background-color: #3d3d42;
             color: white;
 
             border: none;
@@ -106,12 +106,8 @@
             outline: none;
 
             option {
-                box-shadow: none;
-                border: none;
-                outline: none;
-
-                border-radius: 1rem;
-
+                font-family: inherit;
+                // padding-left: 1rem;
             }
 
         }
