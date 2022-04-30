@@ -1,4 +1,4 @@
-import { $, $$ } from "./index.js";
+import { $ } from "./index.js";
 
 
 const planetsLocalData = {
@@ -99,7 +99,7 @@ const createPlanetCard = (apiData, localData) => {
     // for image and it's alt
     const planetImgSrc = planetCardWrap.querySelector('.planets__card--img-src');
     planetImgSrc.src = localData.url;
-    planetImgSrc.alt = `image of ${apiData.name}`;
+    planetImgSrc.alt = `image of ${apiData.englishName}`;
 
     // discovered by
     const planetDiscoverdBy = planetCardWrap.querySelector('.discovered-by');
@@ -144,31 +144,29 @@ const createPlanetCard = (apiData, localData) => {
     planetEscVelocity.textContent = localData.escVelocity;
 
     // for moons
-    // const planetMoons = apiData.moons;
-    // const moonList = planetCardWrap.querySelector('.moon__list');
+    const planetMoons = apiData.moons;
+    const moonList = planetCardWrap.querySelector('.moon__list');
 
-    // const moonListItemsTemplate = $('#moon__list--template').content.cloneNode(true).children[0];
-    // const moonListItems = moonListItemsTemplate.querySelector('.moon__list--items');
+    if(!planetMoons) {
+        const emptyItem = document.createElement('li');
+        emptyItem.classList.add('moon__list--items');
+        emptyItem.textContent = `${apiData.englishName} has no moon(s)`;
+        emptyItem.style.backgroundColor = localData.themeColor;
 
-    // if(!planetMoons.length) {
-    //     moonList.innerHTML = 
-    //     `
-    //     <li class="moon__list--items"> No moons present </li>
-    //     `;
-    // }
+        moonList.append(emptyItem);
+    }
+    else {
+        planetMoons.forEach(item => {
+            const moonListItems = document.createElement('li');
+            moonListItems.classList.add('moon__list--items');
+            moonListItems.textContent = item.moon;
+            moonListItems.style.backgroundColor = localData.themeColor;
 
+            moonList.append(moonListItems);
+        });
+    }
 
-        
-    // planetMoons.forEach(item => {
-    //     // moonListItems.textContent = item.moon;
-    //     moonListItems.textContent = item.moon;
-    //     // moonListItems.style.backgroundColor = localData.themeColor;
-    //     console.log(item);
-    //     moonList.append(moonListItemsTemplate);
-    // });
-    
-
-    // // appending <template> to container
+    // appending <template> to container
     $('.planets__container').append(planetCardWrap);
 }
 

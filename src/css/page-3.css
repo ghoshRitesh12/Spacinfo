@@ -211,9 +211,10 @@ textarea, select {
   font-size: clamp(1.5rem, 3.3vmin, 2.8rem);
   color: #e96a76;
   font-family: "Ubuntu", sans-serif;
+  letter-spacing: 1px;
 }
 .planets__card--img-info--wrap {
-  padding: 1.5rem 0 1.2rem 0;
+  padding: 2rem 0 1.2rem 0;
 }
 .planets__card--img {
   --edges: .7rem;
@@ -251,7 +252,7 @@ textarea, select {
   }
 }
 .planets__card--info-foreign {
-  padding: 1.2rem 0 0 0;
+  padding: 2rem 0 0 0;
   line-height: 1.8;
   letter-spacing: 0.8px;
   font-size: clamp(1.02rem, 3vmin, 1.2rem);
