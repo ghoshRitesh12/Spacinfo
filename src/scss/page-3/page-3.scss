@@ -2,6 +2,7 @@
 
 .planets-page--wrapper {
     background-color: #1f1f1f;
+    min-height: 100vh;
 }
 
 
@@ -9,6 +10,7 @@
     position: relative;
     padding: 1.5rem 1.3rem;
     margin-inline: auto;
+    height: 100%;
 
     color: white;
 
@@ -48,7 +50,7 @@
             position: relative;
             width: fit-content;
 
-            margin-block: 2rem 1rem;
+            margin-block: 2rem .5rem;
             margin-inline: auto;
 
             .custom-arrow {
@@ -114,5 +116,144 @@
         
     }
 
-    
+
+    &__card--container {
+        padding-inline: .4rem;
+    }
+
+
+    &__card {
+        word-spacing: 1.2px;
+
+        &--title {
+            font-size: clamp(1.5rem, 3.3vmin, 2.8rem);
+            color: #e96a76;
+            font-family: $ubuntu;
+        }
+
+
+        &--img-info--wrap {
+            padding: 1.5rem 0 1.2rem 0;
+
+
+            @include breakpoint(large) {
+                // display: flex;
+
+                // flex-direction: row-reverse;
+                // flex-wrap: wrap;
+
+                // justify-content: space-between;
+                // align-content: flex-start;
+
+            }
+        }
+
+        // img wrapper
+        &--img {
+            --edges: .7rem;
+            border-radius: var(--edges);
+            box-shadow: 0 .1rem .5rem 0 #e96a76;
+
+            &-src {
+                min-height: 12rem;
+                border-radius: var(--edges);
+            }
+        }
+
+
+        &--info {
+            line-height: 2;        
+
+            &-local {
+                line-height: 1.8;
+                letter-spacing: .8px;
+                font-size: clamp(1.02rem, 3vmin, 1.2rem);
+                font-family: $openSans;
+            }
+
+            &-local[data-view="desktop"] {
+                display: none;
+                padding: 2rem 0 0 0;
+
+                @include breakpoint(large) {
+                    display: block;                    
+                }
+            }
+
+            &-local[data-view="mobile"] {
+                padding: 1rem 0 0 0;
+
+                @include breakpoint(large) {
+                    display: none;
+                }
+            }
+
+
+            &-foreign {
+                padding: 1.2rem 0 0 0;
+
+
+                line-height: 1.8;
+                letter-spacing: .8px;
+                font-size: clamp(1.02rem, 3vmin, 1.2rem);
+                font-family: $openSans;
+
+
+                .moon {
+                    width: 100%;
+                    margin-top: 1.5rem;
+
+                    text-align: left;
+
+                    &__list {
+                        padding: .65rem 0 0 0;
+                        max-height: 14rem;
+                        height: 100%;
+                        
+                        overflow-y: scroll;
+                        text-indent: 1.5rem;
+
+                        @include breakpoint(large) {
+                            max-height: 20rem;
+                        }
+
+                        scrollbar-width: thin;
+                        
+                        &::-webkit-scrollbar {
+                            width: .8rem;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            background-color: hsla(0, 0%, 85%, 0.8);
+                            border-radius: 1rem;
+                            border: .2rem solid #252525;
+
+                            &:hover {
+                                background-color: hsla(0, 0%, 85%, 0.6);
+                            }
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            background-color: #252525;
+                        }
+
+                        &--items {
+                            margin-bottom: 1.2rem;
+                            padding-block: .25rem;
+                            width: 95%;
+                            
+                            font-weight: 500;
+                            background-color: #e96a76;
+                            color: black;
+                            border-radius: $borders;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

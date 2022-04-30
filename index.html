@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1b1b1b">
+    <meta name="theme-color" content="#1c1c1c">
     <!-- Title of the Website -->
     <title> Spacinfo | Apod </title>
     <!-- Custom CSS -->
@@ -77,9 +77,9 @@
 
 
     <!-- (page__apod) // page__mars-rover // page__planets -->
-    <main class="root page__apod">
+    <!-- <main class="root page__apod"> -->
     <!-- <main class="root page__mars-rover"> -->
-    <!-- <main class="root page__planets"> -->
+    <main class="root page__planets">
 
         <!-- For Page 1 - Apod -->
         <section class="apod-page--wrapper">
@@ -385,38 +385,90 @@
 
 
                 <!-- container for <planet template> -->
-                <!-- <section class="planets__container"> </section> -->
+                <section class="planets__container"> </section>
 
-                <section class="planets__card--container">
+                <!-- planet card <template> -->
+                <template id="planets__card--template">
+                    <section class="planets__card--container">
 
-                    <section class="planets__card">
-
-                        <h2 class="planets__card--title">
-                            Jupiter
-                        </h2>
-
-                        <div class="planets__card--img center">
-                            <img class="planets__card--img-src"
-                                src="https://images.unsplash.com/photo-1630839437035-dac17da580d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1615&q=80"
-                                alt="image of Jupiter">
-                        </div>
-
-
-                        <div class="planets__card--info">
-
-                            <p class="planets__card--info-local">
+                        <section class="planets__card">
+    
+                            <h1 class="planets__card--title">
+                                Jupiter
+                            </h1>
+    
+                            <p class="planets__card--info-local" data-view="mobile">
                                 Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a
                                 gas giant with a mass more than two and a half times that of all the other planets in
                                 the Solar System combined.
                             </p>
-
-
-
-                        </div>
-
+    
+                            <figure class="planets__card--img-info--wrap">
+    
+                                <div class="planets__card--img center">
+                                    <img class="planets__card--img-src"
+                                        src="https://images.unsplash.com/photo-1630839437035-dac17da580d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1615&q=80"
+                                        alt="image of Jupiter">
+                                </div>
+    
+    
+                                <figcaption class="planets__card--info">
+    
+                                    <p class="planets__card--info-local" data-view="desktop">
+                                        Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is
+                                        a
+                                        gas giant with a mass more than two and a half times that of all the other planets
+                                        in
+                                        the Solar System combined.
+                                    </p>
+    
+                                    <article class="planets__card--info-foreign">
+    
+                                        <p class="discovered-by">
+                                            While Jupiter has been known since ancient times, the first detailed
+                                            observations of this planet were made by Galileo Galilei in 1610 with a small
+                                            telescope.
+                                        </p>
+    
+                                        It has an average temperature of <span class="temperature">-165°F or -110°C</span>.
+                                        It has an axial tilt of <span class="axialTilt">3.12</span> degrees
+                                        and is inclined at <span class="inclination">1.304</span>° to ecliptic.
+                                        <span class="name">Jupiter</span> has a density of 
+                                        <span class="density">1.3262</span> g/cm<sup>3</sup>.
+                                        It's equator radius is about <span class="eqRadius">71492</span> km,
+                                        with a polar radius of <span class="plrRadius">66854</span> km.
+                                        The gravity on <span class="name">Jupiter</span> is 
+                                        <span class="gravity">24.79</span> m/s<sup>2</sup>,
+                                        which can be escaped by travelling at <span class="escVelocity">59.5</span> km/s.
+    
+                                        <section class="moon">
+                                            The Moon(s) of <span class="name">Jupiter</span> :
+    
+                                            <ul class="moon__list"> 
+                                                <li class="moon__list--items">
+                                                    Io
+                                                </li>
+                                            </ul>
+    
+                                        </section>
+    
+                                    </article>
+    
+                                </figcaption>
+    
+                            </figure>
+    
+    
+                        </section>
+    
                     </section>
+                </template>
 
-                </section>
+                <template id="moon__list--template">
+                    <li class="moon__list--items">
+                        Io
+                    </li>
+                </template>
 
             </section>
 

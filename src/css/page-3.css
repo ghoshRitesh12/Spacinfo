@@ -103,12 +103,14 @@ textarea, select {
 }
 .planets-page--wrapper {
   background-color: #1f1f1f;
+  min-height: 100vh;
 }
 
 .planets {
   position: relative;
   padding: 1.5rem 1.3rem;
   margin-inline: auto;
+  height: 100%;
   color: white;
 }
 @media (min-width: 40em) {
@@ -151,7 +153,7 @@ textarea, select {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin-block: 2rem 1rem;
+  margin-block: 2rem 0.5rem;
   margin-inline: auto;
 }
 .planets__topic--select-menu__wrap .custom-arrow {
@@ -198,4 +200,104 @@ textarea, select {
 }
 .planets__topic--select-menu option {
   font-family: inherit;
+}
+.planets__card--container {
+  padding-inline: 0.4rem;
+}
+.planets__card {
+  word-spacing: 1.2px;
+}
+.planets__card--title {
+  font-size: clamp(1.5rem, 3.3vmin, 2.8rem);
+  color: #e96a76;
+  font-family: "Ubuntu", sans-serif;
+}
+.planets__card--img-info--wrap {
+  padding: 1.5rem 0 1.2rem 0;
+}
+.planets__card--img {
+  --edges: .7rem;
+  border-radius: var(--edges);
+  box-shadow: 0 0.1rem 0.5rem 0 #e96a76;
+}
+.planets__card--img-src {
+  min-height: 12rem;
+  border-radius: var(--edges);
+}
+.planets__card--info {
+  line-height: 2;
+}
+.planets__card--info-local {
+  line-height: 1.8;
+  letter-spacing: 0.8px;
+  font-size: clamp(1.02rem, 3vmin, 1.2rem);
+  font-family: "Open Sans", sans-serif;
+}
+.planets__card--info-local[data-view=desktop] {
+  display: none;
+  padding: 2rem 0 0 0;
+}
+@media (min-width: 64em) {
+  .planets__card--info-local[data-view=desktop] {
+    display: block;
+  }
+}
+.planets__card--info-local[data-view=mobile] {
+  padding: 1rem 0 0 0;
+}
+@media (min-width: 64em) {
+  .planets__card--info-local[data-view=mobile] {
+    display: none;
+  }
+}
+.planets__card--info-foreign {
+  padding: 1.2rem 0 0 0;
+  line-height: 1.8;
+  letter-spacing: 0.8px;
+  font-size: clamp(1.02rem, 3vmin, 1.2rem);
+  font-family: "Open Sans", sans-serif;
+}
+.planets__card--info-foreign .moon {
+  width: 100%;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+.planets__card--info-foreign .moon__list {
+  padding: 0.65rem 0 0 0;
+  max-height: 14rem;
+  height: 100%;
+  overflow-y: scroll;
+  text-indent: 1.5rem;
+  scrollbar-width: thin;
+}
+@media (min-width: 64em) {
+  .planets__card--info-foreign .moon__list {
+    max-height: 20rem;
+  }
+}
+.planets__card--info-foreign .moon__list::-webkit-scrollbar {
+  width: 0.8rem;
+}
+.planets__card--info-foreign .moon__list::-webkit-scrollbar-thumb {
+  background-color: hsla(0deg, 0%, 85%, 0.8);
+  border-radius: 1rem;
+  border: 0.2rem solid #252525;
+}
+.planets__card--info-foreign .moon__list::-webkit-scrollbar-thumb:hover {
+  background-color: hsla(0deg, 0%, 85%, 0.6);
+}
+.planets__card--info-foreign .moon__list::-webkit-scrollbar-track {
+  background-color: #252525;
+}
+.planets__card--info-foreign .moon__list--items {
+  margin-bottom: 1.2rem;
+  padding-block: 0.25rem;
+  width: 95%;
+  font-weight: 500;
+  background-color: #e96a76;
+  color: black;
+  border-radius: 0.4rem;
+}
+.planets__card--info-foreign .moon__list--items:last-child {
+  margin-bottom: 0;
 }/*# sourceMappingURL=page-3.css.map */

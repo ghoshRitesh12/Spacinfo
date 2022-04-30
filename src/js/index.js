@@ -123,13 +123,13 @@ navlinks.forEach(navlink => {
 window.addEventListener('load', () => {
     
     // fetching apod information
-    getApod();
+    // getApod();
     
 
     getMarsPhoto();
     
     // fetching information for page 3
-    // getPlanet();
+    getPlanet();
 
 });
 
