@@ -2,28 +2,28 @@ import { $ } from "./index.js";
 
 const demoText = 
 `
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
 `;
 
 const demoText2 = 
 `
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
-<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
+<div class="skeleton skeleton-text2"> </div>
 `;
 
 

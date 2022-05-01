@@ -101,19 +101,19 @@ textarea, select {
     background-color: hsl(0deg, 0%, 20%);
   }
 }
-.skeleton-text {
+.skeleton-text2 {
   color: transparent;
   border-radius: 0.4rem;
   margin-bottom: 0.7rem;
   width: 100%;
   min-height: 1.5rem;
 }
-.skeleton-text:last-child {
+.skeleton-text2:last-child {
   width: 80%;
   margin-bottom: 0;
 }
 
-#skeleton-text {
+#skeleton-text2 {
   color: transparent;
   border-radius: 0.4rem;
   width: -webkit-fit-content;

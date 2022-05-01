@@ -128,7 +128,7 @@ window.addEventListener('load', () => {
     // getMarsPhoto();
     
     // fetching information for page 3
-    getPlanet();
+    // getPlanet();
 });
 
 
