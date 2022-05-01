@@ -192,5 +192,3 @@ export async function getPlanet(planet="earth") {
     }
 }
 
-// console.log(planets["Mercury"]);
-

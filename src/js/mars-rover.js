@@ -1,4 +1,4 @@
-import { $ } from "./index.js";
+import { $, $$ } from "./index.js";
 import { modifyDate } from "./apod.js";
 import { API_KEY } from "./apikey.js";
 
@@ -13,7 +13,6 @@ const empty =
 // preservence rover :-
 // `https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/latest_photos?api_key=${API_KEY}`
 
- 
 // curiosity_rover :- 
 // `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?page=${page}&api_key=${API_KEY}`;
 
@@ -67,9 +66,14 @@ export async function getMarsPhoto(page=1) {
         // clearing the <ul> before creating cards
         $('.mars-rover__list').innerHTML = '';
 
+
+        $$('.next-btn').forEach(item => item.classList.remove('hidden'));
+
+
         // check for no photos?
         if(!marsData.length) {
             $('.mars-rover__list').innerHTML = empty;
+            $$('.next-btn').forEach(item => item.classList.add('hidden'));
         }
 
 

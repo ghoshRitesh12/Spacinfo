@@ -94,7 +94,6 @@ navlinks.forEach(navlink => {
 
 
 
-
 // for caching resources
 // const CACH_NAME = "Spacinfo";
 // const urls = [
@@ -123,9 +122,9 @@ navlinks.forEach(navlink => {
 window.addEventListener('load', () => {
     
     // fetching apod information
-    // getApod();
+    getApod();
     
-
+    // fetch mars images
     getMarsPhoto();
     
     // fetching information for page 3
@@ -135,17 +134,11 @@ window.addEventListener('load', () => {
 
 
 // fetching mars information
-$('[data-title="Mars-Rover"]').addEventListener('click',
-e => {
-    getMarsPhoto();
-});
+$('[data-title="Mars-Rover"]').addEventListener('click', getMarsPhoto);
 
 
 // fetching mars information
-// $('data-title="Planets"').addEventListener('click',
-// e => {
-//     getPlanet();
-// });
+$('[data-title="Planets"]').addEventListener('click', getPlanet);
 
 
 
@@ -190,9 +183,6 @@ $('.sapod__search--date').addEventListener('input', e => {
         if(pageNo===1)
             $$('.previous-btn').forEach(item => item.classList.add('hidden'));
 
-
-        // for blurring the focus state of the button
-        // setTimeout(() => e.target.blur(), 250)
     });
 
     
@@ -210,23 +200,17 @@ $('.sapod__search--date').addEventListener('input', e => {
         if(pageNo>1)
             $$('.previous-btn').forEach(item => item.classList.remove('hidden'));
         
-
-        // for blurring the focus state of the button
-        // setTimeout(() => e.target.blur(), 250)
     });
 
     
 
 // getting planets for page 3
-    // delegated click event on options
-    addGlobalEventListener('click', 'option[value]',
+    // change event on <select> element
+    $('.planets__topic--select-menu').addEventListener('change',
     e => {
         const { value } = e.target;
-        getPlanet(value.toLowerCase());
-
-    })
-
-
+        getPlanet(value);
+    });
     
 
 /*---- End event Listeners ----*/

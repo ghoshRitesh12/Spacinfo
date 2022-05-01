@@ -39,8 +39,6 @@
             line-height: 1.5;
             border-radius: $borders;
 
-            // color: #fff;
-
             @include breakpoint(large) {
                 width: fit-content;
             }
@@ -109,11 +107,8 @@
 
             option {
                 font-family: inherit;
-                // padding-left: 1rem;
             }
-
         }
-        
     }
 
 
@@ -126,7 +121,7 @@
         word-spacing: 1.2px;
 
         &--title {
-            font-size: clamp(1.5rem, 3.3vmin, 2.8rem);
+            font-size: clamp(1.5rem, 5vmin, 3rem);
             color: #e96a76;
             font-family: $ubuntu;
             letter-spacing: 1px;
@@ -166,7 +161,7 @@
             line-height: 2;        
 
             &-local {
-                line-height: 1.8;
+                line-height: 1.9;
                 letter-spacing: .8px;
                 font-size: clamp(1.02rem, 3vmin, 1.2rem);
                 font-family: $openSans;
@@ -193,12 +188,10 @@
             &-foreign {
                 padding: 2rem 0 0 0;
 
-
-                line-height: 1.8;
+                line-height: 1.9;
                 letter-spacing: .8px;
                 font-size: clamp(1.02rem, 3vmin, 1.2rem);
                 font-family: $openSans;
-
 
                 .moon {
                     width: 100%;
@@ -207,7 +200,7 @@
                     text-align: left;
 
                     &__list {
-                        padding: .65rem 0 0 0;
+                        padding: 1rem 0 0 0;
                         max-height: 14rem;
                         height: 100%;
                         

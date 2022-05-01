@@ -208,7 +208,7 @@ textarea, select {
   word-spacing: 1.2px;
 }
 .planets__card--title {
-  font-size: clamp(1.5rem, 3.3vmin, 2.8rem);
+  font-size: clamp(1.5rem, 5vmin, 3rem);
   color: #e96a76;
   font-family: "Ubuntu", sans-serif;
   letter-spacing: 1px;
@@ -229,7 +229,7 @@ textarea, select {
   line-height: 2;
 }
 .planets__card--info-local {
-  line-height: 1.8;
+  line-height: 1.9;
   letter-spacing: 0.8px;
   font-size: clamp(1.02rem, 3vmin, 1.2rem);
   font-family: "Open Sans", sans-serif;
@@ -253,7 +253,7 @@ textarea, select {
 }
 .planets__card--info-foreign {
   padding: 2rem 0 0 0;
-  line-height: 1.8;
+  line-height: 1.9;
   letter-spacing: 0.8px;
   font-size: clamp(1.02rem, 3vmin, 1.2rem);
   font-family: "Open Sans", sans-serif;
@@ -264,7 +264,7 @@ textarea, select {
   text-align: left;
 }
 .planets__card--info-foreign .moon__list {
-  padding: 0.65rem 0 0 0;
+  padding: 1rem 0 0 0;
   max-height: 14rem;
   height: 100%;
   overflow-y: scroll;
