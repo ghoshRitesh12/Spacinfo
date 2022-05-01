@@ -172,7 +172,7 @@ const createPlanetCard = (apiData, localData) => {
 
 
 
-export async function getPlanet(planet="uranus") {
+export async function getPlanet(planet="earth") {
     try {
         const PLANET_URL = 
         `https://api.le-systeme-solaire.net/rest/bodies/${planet}`;
