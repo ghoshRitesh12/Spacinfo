@@ -101,6 +101,26 @@ textarea, select {
     background-color: hsl(0deg, 0%, 20%);
   }
 }
+.skeleton-text {
+  color: transparent;
+  border-radius: 0.4rem;
+  margin-bottom: 0.7rem;
+  width: 100%;
+  min-height: 1.5rem;
+}
+.skeleton-text:last-child {
+  width: 80%;
+  margin-bottom: 0;
+}
+
+#skeleton-text {
+  color: transparent;
+  border-radius: 0.4rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .planets-page--wrapper {
   background-color: #1f1f1f;
   min-height: 100vh;
@@ -201,7 +221,7 @@ textarea, select {
 .planets__topic--select-menu option {
   font-family: inherit;
 }
-.planets__card--container {
+.planets__container {
   padding-inline: 0.4rem;
 }
 .planets__card {

@@ -1,4 +1,5 @@
 @use '../components' as *;
+@use './skeletonLoadingCard';
 
 .mars-rover-page--wrapper {
     min-height: 100vh;
@@ -200,7 +201,8 @@
 
             &-rover {
                 padding-top: 1rem;
-                width: 100%;
+                width: fit-content;
+                // width: 100%;
             }            
         }
 

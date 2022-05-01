@@ -101,6 +101,24 @@ textarea, select {
     background-color: hsl(0deg, 0%, 20%);
   }
 }
+.skeleton-text {
+  color: transparent;
+  margin-bottom: 0.5rem;
+  border-radius: 0.4rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#skeleton-text {
+  color: transparent;
+  margin-bottom: 0.5rem;
+  border-radius: 0.4rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .mars-rover-page--wrapper {
   min-height: 100vh;
   background: linear-gradient(75deg, #242424 80%, #1f1f1f 80%);
@@ -279,7 +297,9 @@ textarea, select {
 }
 .mars-rover__card--body-rover {
   padding-top: 1rem;
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .mars-rover__card .rover-status {
   color: hsl(115deg, 100%, 85%);

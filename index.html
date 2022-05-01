@@ -77,9 +77,9 @@
 
 
     <!-- (page__apod) // page__mars-rover // page__planets -->
-    <main class="root page__apod">
+    <!-- <main class="root page__apod"> -->
     <!-- <main class="root page__mars-rover"> -->
-    <!-- <main class="root page__planets"> -->
+    <main class="root page__planets">
 
         <!-- For Page 1 - Apod -->
         <section class="apod-page--wrapper">
@@ -302,29 +302,30 @@
                         <figure class="mars-rover__card">
 
                             <div class="mars-rover__card--header">
-                                <img class="mars-rover__card--header--img-src"
+                                <img class="mars-rover__card--header--img-src skeleton skeleton-image"
                                     src="https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/03450/opgs/edr/ncam/NRB_703757935EDR_S0941102NCAM00594M_.JPG"
-                                    alt="latest mars-rover photo" loading="lazy" />
+                                    loading="lazy" />
                             </div>
 
                             <figcaption class="mars-rover__card--body">
 
                                 <div class="mars-rover__card--body-date">
 
-                                    <p>Photo #<span class="photo-id">961070</span> taken:</p>
+                                    <p class="photoInfo skeleton skeleton-text">
+                                        Photo #<span class="photo-id" id="skeleton-text">961070</span> taken:
+                                    </p>
 
-                                    <p class="earth-date">on April 23, 2022</p>
+                                    <p class="earth-date skeleton skeleton-text">on April 23, 2022</p>
 
-                                    <p>Mars date(sol) - <span class="mars-date">3450</span></p>
+                                    <p class="marsDate-wrap skeleton skeleton-text">Mars date(sol) - <span class="mars-date">3450</span></p>
 
                                 </div>
 
-                                <p class="mars-rover__card--body-rover">
-                                    by <span class="rover-name">Curiosity</span> Rover <span
-                                        class="rover-status">[active]</span>
+                                <p class="mars-rover__card--body-rover skeleton skeleton-text">
+                                    by <span class="rover-name">Curiosity</span> Rover <span class="rover-status" id="skeleton-text">[active]</span>
                                 </p>
 
-                                <a class="full-image"
+                                <a class="full-image skeleton" id="skeleton-text"
                                     href="https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/03450/opgs/edr/ncam/NRB_703757935EDR_S0941102NCAM00594M_.JPG"
                                     target="_blank">
                                     Full image
@@ -392,44 +393,43 @@
 
                     <section class="planets__card">
 
-                        <h1 class="planets__card--title">
-                            Jupiter
+                        <h1 class="planets__card--title skeleton" id="skeleton-text">
+                            <!-- Jupiter -->
                         </h1>
 
                         <p class="planets__card--info-local" data-view="mobile">
-                            Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a
+                            <!-- Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a
                             gas giant with a mass more than two and a half times that of all the other planets in
-                            the Solar System combined.
+                            the Solar System combined. -->
                         </p>
 
                         <figure class="planets__card--img-info--wrap">
 
                             <div class="planets__card--img center">
-                                <img class="planets__card--img-src"
-                                    src="https://images.unsplash.com/photo-1630839437035-dac17da580d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1615&q=80"
-                                    alt="image of Jupiter">
+                                <img class="planets__card--img-src skeleton skeleton-image"
+                                    src="https://images.unsplash.com/photo-1630839437035-dac17da580d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1615&q=80">
                             </div>
 
 
                             <figcaption class="planets__card--info">
 
                                 <p class="planets__card--info-local" data-view="desktop">
-                                    Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is
+                                    <!-- Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is
                                     a
                                     gas giant with a mass more than two and a half times that of all the other planets
                                     in
-                                    the Solar System combined.
+                                    the Solar System combined. -->
                                 </p>
 
                                 <article class="planets__card--info-foreign">
 
                                     <p class="discovered-by">
-                                        While Jupiter has been known since ancient times, the first detailed
+                                        <!-- While Jupiter has been known since ancient times, the first detailed
                                         observations of this planet were made by Galileo Galilei in 1610 with a small
-                                        telescope.
+                                        telescope. -->
                                     </p>
 
-                                    It has an average temperature of <span class="temperature">-165°F or -110°C</span>.
+                                    <span class="name"> </span> has an average temperature of <span class="temperature">-165°F or -110°C</span>.
                                     It has an axial tilt of <span class="axialTilt">3.12</span> degrees
                                     and is inclined at <span class="inclination">1.304</span>° to ecliptic.
                                     <span class="name">Jupiter</span> has a density of 

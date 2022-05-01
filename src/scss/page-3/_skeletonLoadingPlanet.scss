@@ -1,0 +1,21 @@
+.skeleton-text {
+    color: transparent;
+    border-radius: .4rem;
+    margin-bottom: .7rem;
+
+    width: 100%;
+    min-height: 1.5rem;
+
+    &:last-child {
+        width: 80%;
+        margin-bottom: 0;
+    }
+}
+
+#skeleton-text {
+    color: transparent;
+    // margin-bottom: .5rem;
+    border-radius: .4rem;
+
+    width: fit-content;
+}

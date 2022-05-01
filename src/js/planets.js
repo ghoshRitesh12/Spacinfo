@@ -1,5 +1,32 @@
 import { $ } from "./index.js";
 
+const demoText = 
+`
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+`;
+
+const demoText2 = 
+`
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+<div class="skeleton skeleton-text"> </div>
+`;
+
+
 
 const planetsLocalData = {
     "mercury": {
@@ -89,7 +116,8 @@ const createPlanetCard = (apiData, localData) => {
     // for local information 
     const planetLocalInfo = planetCardWrap.querySelectorAll('.planets__card--info-local');
     planetLocalInfo.forEach(item => {
-        item.textContent = localData.info;
+        item.innerHTML = demoText;
+        // item.textContent = localData.info;
     });
 
     // for image shadow
@@ -99,7 +127,10 @@ const createPlanetCard = (apiData, localData) => {
     // for image and it's alt
     const planetImgSrc = planetCardWrap.querySelector('.planets__card--img-src');
     planetImgSrc.src = localData.url;
-    planetImgSrc.alt = `image of ${apiData.englishName}`;
+
+
+    // const planetForeignInfo = planetCardWrap.querySelector('.planets__card--info-foreign');
+    // planetForeignInfo.innerHTML = demoText2;
 
     // discovered by
     const planetDiscoverdBy = planetCardWrap.querySelector('.discovered-by');
@@ -168,6 +199,21 @@ const createPlanetCard = (apiData, localData) => {
 
     // appending <template> to container
     $('.planets__container').append(planetCardWrap);
+
+    planetImgSrc.addEventListener('load', (e) => {
+        e.target.classList.remove('skeleton','skeleton-image');
+        planetImgSrc.alt = `image of ${apiData.englishName}`;
+
+        planetTitle.classList.remove('skeleton');
+        planetTitle.removeAttribute('id');
+
+        planetLocalInfo.forEach(item => {
+            item.innerHTML = '';
+            item.textContent = localData.info;
+        });
+
+    });
+
 }
 
 

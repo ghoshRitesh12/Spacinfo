@@ -125,11 +125,10 @@ window.addEventListener('load', () => {
     getApod();
     
     // fetch mars images
-    getMarsPhoto();
+    // getMarsPhoto();
     
     // fetching information for page 3
     getPlanet();
-
 });
 
 
@@ -137,8 +136,10 @@ window.addEventListener('load', () => {
 $('[data-title="Mars-Rover"]').addEventListener('click', getMarsPhoto);
 
 
-// fetching mars information
-$('[data-title="Planets"]').addEventListener('click', getPlanet);
+// fetching planet information
+$('[data-title="Planets"]').addEventListener('click', () => {
+    getPlanet();
+});
 
 
 

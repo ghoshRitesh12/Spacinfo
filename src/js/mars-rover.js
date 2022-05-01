@@ -50,6 +50,29 @@ const createCards = (resp) => {
 
     // appending <li> cards created to <ul>
     $('.mars-rover__list').append(cardWrap);  
+
+
+    imageSrc.addEventListener('load', (e) => {
+        e.target.classList.remove('skeleton','skeleton-image');
+        imageSrc.alt = "latest mars-rover photo";
+
+        // removing skeleton load from:
+        // photo id text
+        cardWrap.querySelector('.photoInfo').classList.remove('skeleton', 'skeleton-text');
+        cardWrap.querySelector('.photo-id').removeAttribute('id');
+
+        // earth date, mars date & rover status text
+        cardWrap.querySelector('.earth-date').classList.remove('skeleton', 'skeleton-text');
+        cardWrap.querySelector('.marsDate-wrap').classList.remove('skeleton', 'skeleton-text');
+        cardWrap.querySelector('.mars-rover__card--body-rover').classList.remove('skeleton', 'skeleton-text');
+        cardWrap.querySelector('.rover-status').removeAttribute('id');
+        
+        // full-image button link
+        cardWrap.querySelector('.full-image').classList.remove('skeleton');
+        cardWrap.querySelector('.full-image').removeAttribute('id');
+
+    });
+
 };
 
 export async function getMarsPhoto(page=1) {
