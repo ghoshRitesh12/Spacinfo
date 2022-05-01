@@ -106,7 +106,7 @@ textarea, select {
   border-radius: 0.4rem;
   margin-bottom: 0.7rem;
   width: 100%;
-  min-height: 1.5rem;
+  min-height: 1.4rem;
 }
 .skeleton-text2:last-child {
   width: 80%;
@@ -119,6 +119,13 @@ textarea, select {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+#skeleton-list {
+  width: 90%;
+  background-color: transparent;
+  color: transparent;
+  border-radius: 0.4rem;
 }
 
 .planets-page--wrapper {
@@ -277,18 +284,29 @@ textarea, select {
   letter-spacing: 0.8px;
   font-size: clamp(1.02rem, 3vmin, 1.2rem);
   font-family: "Open Sans", sans-serif;
+  word-wrap: break-word;
+}
+.planets__card--info-foreign .bs {
+  margin-bottom: 0.7rem;
 }
 .planets__card--info-foreign .moon {
   width: 100%;
   margin-top: 1.5rem;
   text-align: left;
+  transform: 0.5s ease opacity;
+}
+.planets__card--info-foreign .moon__of {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .planets__card--info-foreign .moon__list {
-  padding: 1rem 0 0 0;
+  margin: 1rem 0 0 0;
   max-height: 14rem;
   height: 100%;
-  overflow-y: scroll;
+  font-size: clamp(1.02rem, 3vmin, 1.2rem);
   text-indent: 1.5rem;
+  overflow-y: scroll;
   scrollbar-width: thin;
 }
 @media (min-width: 64em) {
@@ -315,8 +333,6 @@ textarea, select {
   padding-block: 0.25rem;
   width: 95%;
   font-weight: 500;
-  background-color: #e96a76;
-  color: black;
   border-radius: 0.4rem;
 }
 .planets__card--info-foreign .moon__list--items:last-child {

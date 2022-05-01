@@ -1,7 +1,7 @@
-import { $ } from "./index.js";
+import { $, $$ } from "./index.js";
 
-const demoText = 
-`
+const demoText =
+    `
 <div class="skeleton skeleton-text2"> </div>
 <div class="skeleton skeleton-text2"> </div>
 <div class="skeleton skeleton-text2"> </div>
@@ -10,8 +10,8 @@ const demoText =
 <div class="skeleton skeleton-text2"> </div>
 `;
 
-const demoText2 = 
-`
+const demoText2 =
+    `
 <div class="skeleton skeleton-text2"> </div>
 <div class="skeleton skeleton-text2"> </div>
 <div class="skeleton skeleton-text2"> </div>
@@ -49,7 +49,7 @@ const planetsLocalData = {
 
     "earth": {
         "url": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-        "info": "Our home planet is the third planet from the Sun, and the only place we know of so far that's inhabited by living things. Earth is the only world in our Solar System with liquid water on the surface.",   
+        "info": "Our home planet is the third planet from the Sun, and the only place we know of so far that's inhabited by living things. Earth is the only world in our Solar System with liquid water on the surface.",
         "discoveredBy": "Earth was never formally 'discovered' because it was never an unrecognized entity by humans.",
         "escVelocity": "11.2",
         "avgTemp": "59°F or 15°C",
@@ -58,7 +58,7 @@ const planetsLocalData = {
 
     "mars": {
         "url": "https://images.unsplash.com/photo-1630694093867-4b947d812bf0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1615&q=80",
-        "info": "Mars is the fourth planet from the Sun, a dusty, cold, desert world with a very thin atmoshpere. Mars is also a dynamic planet with seasons, polar ice caps, canyons, extinct volcanoes, and evidence that it was even more active in the past.",   
+        "info": "Mars is the fourth planet from the Sun, a dusty, cold, desert world with a very thin atmoshpere. Mars is also a dynamic planet with seasons, polar ice caps, canyons, extinct volcanoes, and evidence that it was even more active in the past.",
         "discoveredBy": "The first telescopic observation of Mars was by Galileo Galilei in 1610. Within a century, astronomers discovered distinct albedo features on the planet, including the dark patch Syrtis Major Planum and polar ice caps.",
         "escVelocity": "5.027",
         "avgTemp": "-85°F or -65°C",
@@ -67,7 +67,7 @@ const planetsLocalData = {
 
     "jupiter": {
         "url": "https://images.unsplash.com/photo-1630839437035-dac17da580d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1615&q=80",
-        "info": "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass more than two and a half times that of all the other planets in the Solar System combined.",   
+        "info": "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass more than two and a half times that of all the other planets in the Solar System combined.",
         "discoveredBy": "While Jupiter has been known since ancient times, the first detailed observations of this planet were made by Galileo Galilei in 1610 with a small telescope.",
         "escVelocity": "59.5",
         "avgTemp": "-166°F or -110°C",
@@ -76,7 +76,7 @@ const planetsLocalData = {
 
     "saturn": {
         "url": "https://images.unsplash.com/photo-1637984135921-301a7d39e3b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1615&q=80",
-        "info": "Saturn is the sixth planet from the Sun and the second-largest planet in our solar system. Adorned with thousands of beautiful ringlets, Saturn is unique among the planets.",   
+        "info": "Saturn is the sixth planet from the Sun and the second-largest planet in our solar system. Adorned with thousands of beautiful ringlets, Saturn is unique among the planets.",
         "discoveredBy": "Saturn was the most distant of the five planets known to the ancients. In 1610, Italian astronomer Galileo Galilei was the first to gaze at Saturn through a telescope.",
         "escVelocity": "35.5",
         "avgTemp": "-220°F or -140°C",
@@ -85,7 +85,7 @@ const planetsLocalData = {
 
     "uranus": {
         "url": "https://images.unsplash.com/photo-1639874897442-8b6d5a181cf3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1615&q=80",
-        "info": "Uranus is the seventh planet from the Sun, and has the third-largest diameter in our solar system. It was the first planet found with the aid of a telescope, Uranus was discovered in 1781 by astronomer William Herschel, although he originally thought it was either a comet or a star.",   
+        "info": "Uranus is the seventh planet from the Sun, and has the third-largest diameter in our solar system. It was the first planet found with the aid of a telescope, Uranus was discovered in 1781 by astronomer William Herschel, although he originally thought it was either a comet or a star.",
         "discoveredBy": "The planet Uranus was discovered by William Herschel on March 13, 1781. He discoverd Uranus while surveying stars in the night sky using a telescope that he had built himself.",
         "escVelocity": "21.3",
         "avgTemp": "-320°F or -195°C",
@@ -94,7 +94,7 @@ const planetsLocalData = {
 
     "neptune": {
         "url": "https://images.unsplash.com/photo-1639921884918-8d28ab2e39a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1615&q=80",
-        "info": "Dark, cold, and whipped by supersonic winds, ice giant Neptune is the eighth and most distant planet in our solar system. Neptune was first predicted by mathematics before its discovery.",   
+        "info": "Dark, cold, and whipped by supersonic winds, ice giant Neptune is the eighth and most distant planet in our solar system. Neptune was first predicted by mathematics before its discovery.",
         "discoveredBy": "The planet Neptune was mathematically predicted by Urbain Le Verrier, before it was directly observed by astronomer Johann Gottfried Galle on the night of September 23-24, 1846.",
         "escVelocity": "23.5",
         "avgTemp": "-330°F or -200°C",
@@ -111,7 +111,6 @@ const createPlanetCard = (apiData, localData) => {
     // for planet title
     const planetTitle = planetCardWrap.querySelector('.planets__card--title');
     planetTitle.textContent = apiData.englishName;
-    planetTitle.style.color = localData.themeColor;
 
     // for local information 
     const planetLocalInfo = planetCardWrap.querySelectorAll('.planets__card--info-local');
@@ -129,60 +128,36 @@ const createPlanetCard = (apiData, localData) => {
     planetImgSrc.src = localData.url;
 
 
-    // const planetForeignInfo = planetCardWrap.querySelector('.planets__card--info-foreign');
-    // planetForeignInfo.innerHTML = demoText2;
-
     // discovered by
     const planetDiscoverdBy = planetCardWrap.querySelector('.discovered-by');
-    planetDiscoverdBy.textContent = localData.discoveredBy;
+    planetDiscoverdBy.innerHTML = demoText;
+    // planetDiscoverdBy.textContent = localData.discoveredBy;
 
-    // temperature
-    const planetTemperature = planetCardWrap.querySelector('.temperature');
-    planetTemperature.textContent = localData.avgTemp;
+    const technicalInfo = 
+    `
+    ${apiData.englishName} has an average temperature of ${localData.avgTemp}. 
+    It has an axial tilt of ${apiData.axialTilt} degrees and is inclined ${apiData.inclination}° to ecliptic. 
+    ${apiData.englishName} has a density of ${apiData.density} g/cm³. It's equator radius is about 
+    ${apiData.equaRadius} km, with a polar radius of ${apiData.polarRadius} km. 
+    The gravity on ${apiData.englishName} is ${apiData.gravity} m/s², which can be 
+    escaped by travelling at ${localData.escVelocity} km/s.
+    `;
+    
+    const technicalInfoWrap = planetCardWrap.querySelector('.technical-info');
+    technicalInfoWrap.innerHTML = demoText2;
 
-    // axialTilt
-    const planetAxialTilt = planetCardWrap.querySelector('.axialTilt');
-    planetAxialTilt.textContent = apiData.axialTilt;
-
-    // inclination
-    const planetInclination = planetCardWrap.querySelector('.inclination');
-    planetInclination.textContent = apiData.inclination;
-
-    // for all in-doc name
-    const planetInDocName = planetCardWrap.querySelectorAll('.name');
-    planetInDocName.forEach(item => {
-        item.textContent = apiData.englishName;
-    })
-
-    // density
-    const planetDensity = planetCardWrap.querySelector('.density');
-    planetDensity.textContent = apiData.density;
-
-    // equator radius
-    const planetEqRadius = planetCardWrap.querySelector('.eqRadius');
-    planetEqRadius.textContent = apiData.equaRadius;
-
-    // polar radius
-    const planetPlrRadius = planetCardWrap.querySelector('.plrRadius');
-    planetPlrRadius.textContent = apiData.polarRadius;
-
-    // gravity
-    const planetGravity = planetCardWrap.querySelector('.gravity');
-    planetGravity.textContent = apiData.gravity;
-
-    // escape velocity
-    const planetEscVelocity = planetCardWrap.querySelector('.escVelocity');
-    planetEscVelocity.textContent = localData.escVelocity;
+    // moon: planet name
+    planetCardWrap.querySelector('.name').textContent = apiData.englishName;
 
     // for moons
     const planetMoons = apiData.moons;
     const moonList = planetCardWrap.querySelector('.moon__list');
 
-    if(!planetMoons) {
+    if (!planetMoons) {
         const emptyItem = document.createElement('li');
         emptyItem.classList.add('moon__list--items');
         emptyItem.textContent = `${apiData.englishName} has no moon(s)`;
-        emptyItem.style.backgroundColor = localData.themeColor;
+        // emptyItem.style.backgroundColor = localData.themeColor;
 
         moonList.append(emptyItem);
     }
@@ -191,7 +166,7 @@ const createPlanetCard = (apiData, localData) => {
             const moonListItems = document.createElement('li');
             moonListItems.classList.add('moon__list--items');
             moonListItems.textContent = item.moon;
-            moonListItems.style.backgroundColor = localData.themeColor;
+            // moonListItems.style.backgroundColor = localData.themeColor;
 
             moonList.append(moonListItems);
         });
@@ -201,16 +176,38 @@ const createPlanetCard = (apiData, localData) => {
     $('.planets__container').append(planetCardWrap);
 
     planetImgSrc.addEventListener('load', (e) => {
-        e.target.classList.remove('skeleton','skeleton-image');
+        e.target.classList.remove('skeleton', 'skeleton-image');
         planetImgSrc.alt = `image of ${apiData.englishName}`;
 
+        // for planet title
         planetTitle.classList.remove('skeleton');
         planetTitle.removeAttribute('id');
+        planetTitle.style.color = localData.themeColor;
 
+        // for local planet information
         planetLocalInfo.forEach(item => {
             item.innerHTML = '';
             item.textContent = localData.info;
         });
+
+        // for discovered by information
+        planetDiscoverdBy.innerHTML = '';
+        planetDiscoverdBy.classList.remove('bs');
+        planetDiscoverdBy.textContent = localData.discoveredBy;
+
+        // for technical information
+        technicalInfoWrap.innerHTML = '';
+        technicalInfoWrap.textContent = technicalInfo;
+
+        // for moon-list items
+        planetCardWrap.querySelector('.moon__of').classList.remove('skeleton', 'skeleton-text2');
+        moonList.classList.remove('skeleton');
+        moonList.removeAttribute('id');
+
+        $$('.moon__list--items').forEach(item => {
+            item.style.backgroundColor = localData.themeColor;
+            item.style.color = "black";
+        })
 
     });
 
@@ -218,12 +215,12 @@ const createPlanetCard = (apiData, localData) => {
 
 
 
-export async function getPlanet(planet="earth") {
+export async function getPlanet(planet = "earth") {
     try {
-        const PLANET_URL = 
-        `https://api.le-systeme-solaire.net/rest/bodies/${planet}`;
+        const PLANET_URL =
+            `https://api.le-systeme-solaire.net/rest/bodies/${planet}`;
 
-        const response =  await fetch(PLANET_URL);
+        const response = await fetch(PLANET_URL);
         const planetData = await response.json();
 
         // clearing container for each call
@@ -232,7 +229,7 @@ export async function getPlanet(planet="earth") {
         // function call
         createPlanetCard(planetData, planetsLocalData[planet]);
 
-        
+
     } catch (err) {
         console.error(err);
     }

@@ -193,19 +193,32 @@
                 font-size: clamp(1.02rem, 3vmin, 1.2rem);
                 font-family: $openSans;
 
+                word-wrap: break-word;
+
+                .bs {
+                    margin-bottom: .7rem;
+                }
+
                 .moon {
                     width: 100%;
                     margin-top: 1.5rem;
 
                     text-align: left;
+                    transform: .5s ease opacity;
+
+                    &__of {
+                        width: fit-content;
+                    }
 
                     &__list {
-                        padding: 1rem 0 0 0;
+                        margin: 1rem 0 0 0;
                         max-height: 14rem;
                         height: 100%;
+
+                        font-size: clamp(1.02rem, 3vmin, 1.2rem);
+                        text-indent: 1.5rem;
                         
                         overflow-y: scroll;
-                        text-indent: 1.5rem;
 
                         @include breakpoint(large) {
                             max-height: 20rem;
@@ -232,13 +245,15 @@
                         }
 
                         &--items {
+                            // position: relative;
+                            // z-index: -1;
                             margin-bottom: 1.2rem;
                             padding-block: .25rem;
                             width: 95%;
-                            
+
                             font-weight: 500;
-                            background-color: #e96a76;
-                            color: black;
+                            // background-color: #e96a76;
+                            // color: black;
                             border-radius: $borders;
 
                             &:last-child {

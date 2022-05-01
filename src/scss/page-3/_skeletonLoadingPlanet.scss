@@ -4,7 +4,7 @@
     margin-bottom: .7rem;
 
     width: 100%;
-    min-height: 1.5rem;
+    min-height: 1.4rem;
 
     &:last-child {
         width: 80%;
@@ -18,4 +18,11 @@
     border-radius: .4rem;
 
     width: fit-content;
+}
+
+#skeleton-list {
+    width: 90%;
+    background-color: transparent;
+    color: transparent;
+    border-radius: .4rem;
 }
