@@ -124,7 +124,7 @@ window.addEventListener('load', async () => {
     await getApod();
     
     // fetch mars images
-    await getMarsPhoto();
+    // await getMarsPhoto();
     
     // fetching information for page 3
     // await getPlanet();
