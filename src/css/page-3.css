@@ -4,6 +4,7 @@
   font-style: normal;
   font-weight: 400;
   src: local(""), url("../fonts/open-sans-v28-latin-regular.woff2") format("woff2"), url("../fonts/open-sans-v28-latin-regular.woff") format("woff");
+  font-display: swap;
 }
 /* open-sans-500 - latin */
 @font-face {
@@ -11,6 +12,7 @@
   font-style: normal;
   font-weight: 500;
   src: local(""), url("../fonts/open-sans-v28-latin-500.woff2") format("woff2"), url("../fonts/open-sans-v28-latin-500.woff") format("woff");
+  font-display: swap;
 }
 /* ubuntu-500 - latin */
 @font-face {
@@ -18,6 +20,7 @@
   font-style: normal;
   font-weight: 500;
   src: local(""), url("../fonts/ubuntu-v19-latin-500.woff2") format("woff2"), url("../fonts/ubuntu-v19-latin-500.woff") format("woff");
+  font-display: swap;
 }
 /*-- General Styles --*/
 *,
@@ -183,6 +186,11 @@ textarea, select {
   margin-block: 2rem 0.5rem;
   margin-inline: auto;
 }
+@media (min-width: 64em) {
+  .planets__topic--select-menu__wrap {
+    margin-top: 3rem;
+  }
+}
 .planets__topic--select-menu__wrap .custom-arrow {
   --size: .45em;
   display: block;
@@ -243,16 +251,41 @@ textarea, select {
 .planets__card--img-info--wrap {
   padding: 2rem 0 1.2rem 0;
 }
+@media (min-width: 64em) {
+  .planets__card--img-info--wrap {
+    display: flex;
+    align-items: start;
+    flex-direction: row-reverse;
+    gap: 5rem;
+    padding-top: 1.7rem;
+    width: 100%;
+  }
+}
 .planets__card--img {
   --edges: .7rem;
   border-radius: var(--edges);
-  box-shadow: 0 0.1rem 0.5rem 0 #e96a76;
+}
+@media (min-width: 64em) {
+  .planets__card--img {
+    flex: 1 1 47%;
+    padding-top: 6rem;
+  }
 }
 .planets__card--img-src {
   min-height: 12rem;
   border-radius: var(--edges);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+@media (min-width: 64em) {
+  .planets__card--img-src {
+    min-height: 24rem;
+  }
 }
 .planets__card--info {
+  flex: 1 1 55%;
   line-height: 2;
 }
 .planets__card--info-local {
@@ -293,7 +326,11 @@ textarea, select {
   width: 100%;
   margin-top: 1.5rem;
   text-align: left;
-  transform: 0.5s ease opacity;
+}
+@media (min-width: 64em) {
+  .planets__card--info-foreign .moon {
+    margin-top: 3rem;
+  }
 }
 .planets__card--info-foreign .moon__of {
   width: -webkit-fit-content;

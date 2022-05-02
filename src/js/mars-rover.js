@@ -21,6 +21,9 @@ const createCards = (resp) => {
     // cloning <li template>
     const cardWrap = $('#mars-rover__template--list').content.cloneNode(true).children[0];
 
+    // setting img wrap color transparent for skeleton loading
+    const imgWrap = cardWrap.querySelector('.mars-rover__card--header');
+    imgWrap.style.color = "transparent";
 
     // image source
     const imageSrc = cardWrap.querySelector('.mars-rover__card--header--img-src');
@@ -54,7 +57,7 @@ const createCards = (resp) => {
 
     imageSrc.addEventListener('load', (e) => {
         e.target.classList.remove('skeleton','skeleton-image');
-        imageSrc.alt = "latest mars-rover photo";
+        imgWrap.style.color = "white";
 
         // removing skeleton load from:
         // photo id text

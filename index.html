@@ -7,10 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1c1c1c">
+    <meta name="description" content="Search for everyday's Astronomy Picture of the 
+    Day-APOD OR for Mars Rover photos taken by the Perseverance Rover OR for Information
+    about planets present in our Solar System. 
+    This website Spacinfo is powered by NASA apis and The Solar System OpenData api">
+    <meta name="description" content="Author: Ritesh_g">
+
     <!-- Title of the Website -->
     <title> Spacinfo | Apod </title>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/src/css/main.css" type="text/css">
+    <!-- test: asynchronous css load -->
+    <!-- <link rel="preload" href="/src/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript> -->
+
     <!-- CSS for page 1 -->
     <link rel="stylesheet" href="/src/css/page-1.css">
     <!-- CSS for Page 2 -->
@@ -189,7 +199,9 @@
                             <h1 class="sapod__search--title">
                                 Search for an Astronomy Picture of the Day
                             </h1>
-                            <input class="sapod__search--date" type="date" value="2012-12-12" />
+
+                            <input class="sapod__search--date" type="date" value="2012-12-12" aria-label="enter previous dates"/>
+
                             <p class="sapod__search--note">
                                 (not applicable for future dates)
                             </p>
@@ -304,6 +316,7 @@
                             <div class="mars-rover__card--header">
                                 <img class="mars-rover__card--header--img-src skeleton skeleton-image"
                                     src="https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/03450/opgs/edr/ncam/NRB_703757935EDR_S0941102NCAM00594M_.JPG"
+                                    alt="latest mars-rover photo"
                                     loading="lazy" />
                             </div>
 

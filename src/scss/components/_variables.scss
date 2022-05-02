@@ -6,6 +6,7 @@
     src: local(''),
          url('../fonts/open-sans-v28-latin-regular.woff2') format('woff2'),
          url('../fonts/open-sans-v28-latin-regular.woff') format('woff'); 
+     font-display: swap;
 }
   
 /* open-sans-500 - latin */
@@ -16,6 +17,7 @@
     src: local(''),
          url('../fonts/open-sans-v28-latin-500.woff2') format('woff2'), 
          url('../fonts/open-sans-v28-latin-500.woff') format('woff'); 
+     font-display: swap;
 }
 
 /* ubuntu-500 - latin */
@@ -26,6 +28,7 @@
   src: local(''),
        url('../fonts/ubuntu-v19-latin-500.woff2') format('woff2'), 
        url('../fonts/ubuntu-v19-latin-500.woff') format('woff'); 
+     font-display: swap;   
 }
 
 

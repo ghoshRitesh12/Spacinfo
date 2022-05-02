@@ -52,6 +52,10 @@
             margin-block: 2rem .5rem;
             margin-inline: auto;
 
+            @include breakpoint(large) {
+                margin-top: 3rem;
+            }
+
             .custom-arrow {
                 --size: .45em;
                 display: block;
@@ -131,16 +135,14 @@
         &--img-info--wrap {
             padding: 2rem 0 1.2rem 0;
 
-
             @include breakpoint(large) {
-                // display: flex;
+                display: flex;
+                align-items: start;
+                flex-direction: row-reverse;
+                gap: 5rem;
 
-                // flex-direction: row-reverse;
-                // flex-wrap: wrap;
-
-                // justify-content: space-between;
-                // align-content: flex-start;
-
+                padding-top: 1.7rem;
+                width: 100%;
             }
         }
 
@@ -148,16 +150,29 @@
         &--img {
             --edges: .7rem;
             border-radius: var(--edges);
-            box-shadow: 0 .1rem .5rem 0 #e96a76;
+            // box-shadow: 0 .1rem .5rem 0 #e96a76;
+
+            @include breakpoint(large) {
+                flex: 1 1 47%;
+                padding-top: 6rem;
+            }
+
 
             &-src {
                 min-height: 12rem;
                 border-radius: var(--edges);
+                user-select: none;
+
+                @include breakpoint(large) {
+                    min-height: 24rem;
+                    // max-height: 26rem;
+                }
             }
         }
 
 
         &--info {
+            flex: 1 1 55%;
             line-height: 2;        
 
             &-local {
@@ -204,7 +219,10 @@
                     margin-top: 1.5rem;
 
                     text-align: left;
-                    transform: .5s ease opacity;
+
+                    @include breakpoint(large) {
+                        margin-top: 3rem;
+                    }
 
                     &__of {
                         width: fit-content;

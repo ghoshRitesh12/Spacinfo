@@ -31,7 +31,7 @@ const demoText2 =
 const planetsLocalData = {
     "mercury": {
         "url": "https://images.unsplash.com/photo-1614724723656-457e78e0b50b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1117&q=80",
-        "info": "Mercury is the smallest planet in our solar system. It's the closest planet to our Sun and a little bigger than Earth's Moon.",
+        "info": "Mercury is the smallest planet in our solar system. It's the closest planet to our Sun and a little bigger than Earth's Moon. From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as seven times brighter.",
         "discoveredBy": "Mercury was first observed through telescopes in the seventeenth century by astronomers Galileo Galilei and Thomas Harriot.",
         "escVelocity": "4.25",
         "avgTemp": "333°F or 167°C",
@@ -40,7 +40,7 @@ const planetsLocalData = {
 
     "venus": {
         "url": "https://images.unsplash.com/photo-1630693912525-7a833b62c81f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1615&q=80",
-        "info": "Venus is the second planet from the Sun and Earth's closest planetary neighbor. It's the hottest planet in our Solar System.",
+        "info": "Venus is the second planet from the Sun and Earth's closest planetary neighbor. It's the hottest planet in our Solar System and also one of the four inner, terrestrial (or rocky) planets, and it's often called Earth's twin because it's similar in size and density.",
         "discoveredBy": "There is no single person who is credited with the discovery of Venus. Since Venus is so bright and noticable in the sky, it was probably seen by the first groups of humans.",
         "escVelocity": "10.36",
         "avgTemp": "867°F or 464°C",
@@ -116,16 +116,16 @@ const createPlanetCard = (apiData, localData) => {
     const planetLocalInfo = planetCardWrap.querySelectorAll('.planets__card--info-local');
     planetLocalInfo.forEach(item => {
         item.innerHTML = demoText;
-        // item.textContent = localData.info;
     });
 
     // for image shadow
     const planetImgWrap = planetCardWrap.querySelector('.planets__card--img');
-    planetImgWrap.style.boxShadow = `0 .1rem .5rem 0 ${localData.themeColor}`;
+    // planetImgWrap.style.boxShadow = `0 .1rem .5rem 0 ${localData.themeColor}`;
 
     // for image and it's alt
     const planetImgSrc = planetCardWrap.querySelector('.planets__card--img-src');
     planetImgSrc.src = localData.url;
+    planetImgSrc.style.boxShadow = `0 .1rem .5rem 0 ${localData.themeColor}`;
 
 
     // discovered by

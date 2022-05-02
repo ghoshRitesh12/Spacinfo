@@ -93,7 +93,6 @@ navlinks.forEach(navlink => {
 });
 
 
-
 // for caching resources
 // const CACH_NAME = "Spacinfo";
 // const urls = [
@@ -119,16 +118,16 @@ navlinks.forEach(navlink => {
 
 
 // calling getApod() function on page load
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
     
     // fetching apod information
-    getApod();
+    await getApod();
     
     // fetch mars images
-    // getMarsPhoto();
+    await getMarsPhoto();
     
     // fetching information for page 3
-    // getPlanet();
+    // await getPlanet();
 });
 
 
