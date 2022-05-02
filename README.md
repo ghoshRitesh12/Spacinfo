@@ -1,4 +1,4 @@
-# Spacinfo
+# Spacinfo 🌠
 
 Spacinfo is a website which serves to provide you:
 

@@ -164,7 +164,7 @@ export async function getApod() {
         .finally(() => {
             createApod(apiData)
             .then(() => {
-                // window.scrollTo(0,0);
+                window.scrollTo(0,0);
             })
         });
     } 
