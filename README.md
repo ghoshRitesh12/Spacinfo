@@ -32,8 +32,3 @@ about the planet" was missing, so I infused that locally with what I found on th
  - [NASA Mars-Rover API](https://github.com/chrisccerami/mars-photo-api)
  - [Solar System OpenData API](https://api.le-systeme-solaire.net/en/)
 
-
-## Author
-
-- [@riteshghosh](https://github.com/ghoshRitesh12)
-

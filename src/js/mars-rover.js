@@ -93,7 +93,7 @@ export async function getMarsPhoto(page=1) {
         $('.mars-rover__list').innerHTML = '';
 
 
-        $$('.next-btn').forEach(item => item.classList.remove('hidden'));
+        // $$('.next-btn').forEach(item => item.classList.remove('hidden'));
 
 
         // check for no photos?

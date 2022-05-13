@@ -28,7 +28,7 @@ export function modifyDate(inputDate) {
 const skeletonDate =
 `
     <div class="skeleton skeleton-apod__date">
-        on 12 July, 2018
+        on 11th May, 2022
     </div> 
 `;
 
@@ -142,8 +142,8 @@ export async function getApod() {
         // const response = await fetch(APOD_URL);
         // const apodData = await response.json();
         let cacheResp, apiData;
-        const apodCache = await caches.open(CACHE_NAME);
         const newDate = todaysDate();
+        const apodCache = await caches.open(CACHE_NAME);
 
         caches.has(CACHE_NAME)
         .then(async () => {
@@ -161,11 +161,9 @@ export async function getApod() {
             cacheResp = await caches.match(APOD_URL);
             apiData = await cacheResp.json();
         })
-        .finally(() => {
-            createApod(apiData)
-            .then(() => {
-                window.scrollTo(0,0);
-            })
+        .finally(async () => {
+            await createApod(apiData)
+            window.scrollTo(0,0);
         });
     } 
     catch (err) {
